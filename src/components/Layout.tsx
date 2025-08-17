@@ -1,25 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Estado para controlar qual seção está visível
-  const [activeSection, setActiveSection] = useState('home');
-
+// O Layout agora recebe 'activeSection' como prop
+const Layout: React.FC<{ children: React.ReactNode; activeSection: string }> = ({ children, activeSection }) => {
   return (
     <div className="flex flex-col min-h-screen">
+      {/* E passa a prop para a Navbar */}
       <Navbar activeSection={activeSection} />
       <main className="flex-grow">
-        {/*
-          Aqui, clonamos cada componente filho (as seções) e injetamos
-          a função `setActiveSection` como uma prop em cada um deles.
-        */}
-        {React.Children.map(children, (child) => {
-          if (React.isValidElement(child)) {
-            return React.cloneElement(child, { setActiveSection } as any);
-          }
-          return child;
-        })}
+        {children}
       </main>
       <Footer />
     </div>
