@@ -1,8 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { FaServer, FaDatabase, FaChartLine, FaCode, FaRocket, FaShieldAlt } from 'react-icons/fa';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { FaServer, FaDatabase, FaChartLine, FaCode } from 'react-icons/fa';
 
 const AnimatedNumber: React.FC<{ value: number; suffix?: string }> = ({ value, suffix = '' }) => {
   const [displayValue, setDisplayValue] = React.useState(0);
