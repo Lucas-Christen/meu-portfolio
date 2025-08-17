@@ -9,30 +9,34 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#0a192f',
-          light: '#112240',
-        },
-        text: {
-          primary: '#ccd6f6',
-          secondary: '#8892b0',
+          DEFAULT: '#DC0000', // Ferrari Red
+          light: '#FF1A1A',
+          dark: '#B30000',
         },
         accent: {
-          DEFAULT: '#64ffda',
-          orange: '#ff6600',
+          DEFAULT: '#FFD700', // Ferrari Yellow
+          light: '#FFE44D',
+          dark: '#FFC000',
+        },
+        text: {
+          primary: '#FFFFFF',
+          secondary: '#E5E5E5',
+          accent: '#FFD700',
         },
         background: {
-          primary: '#0a192f',
-          secondary: '#112240',
-        }
+          primary: '#0A0A0A',
+          secondary: '#1A1A1A',
+          accent: '#DC0000',
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['Fira Code', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'pulse-slow': 'pulse 3s infinite',
       },
       keyframes: {
         fadeIn: {

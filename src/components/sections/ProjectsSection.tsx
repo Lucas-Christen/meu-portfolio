@@ -5,64 +5,64 @@ import ProjectCard from '../ProjectCard';
 const ProjectsSection: React.FC = () => {
   const projects = [
     {
-      title: "Sistema de Telemetria Avançada",
-      description: "Plataforma completa de monitoramento em tempo real com análise preditiva e alertas inteligentes. Implementa coleta de métricas de performance, logs estruturados e visualização em dashboards interativos.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      tags: ["React", "Node.js", "Prometheus", "Grafana", "TypeScript"],
+      title: "Sistema de Telemetria UTForce E-Racing",
+      description: "Desenvolvimento completo da interface gráfica do aplicativo de telemetria de dados para carros de corrida. Sistema de coleta e transmissão de dados em tempo real via rede LoRa para análise e predição.",
+      image: "/api/placeholder/400/250",
+      tags: ["Python", "HTML", "Telemetria", "LoRa", "Tempo Real"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Lucas-Christen",
       demoUrl: "#"
     },
     {
-      title: "Dashboard de Performance",
-      description: "Interface moderna para análise de métricas de aplicações web com gráficos interativos, filtros avançados e exportação de relatórios. Foco em UX/UI para facilitar a tomada de decisões.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80",
-      tags: ["React", "D3.js", "Python", "FastAPI", "PostgreSQL"],
+      title: "Sistema de Bateria de Íons de Lítio",
+      description: "Desenvolvimento do sistema de bateria inteligente para protótipo elétrico Fórmula SAE. Inclui monitoramento de temperatura, tensão e otimização de performance.",
+      image: "/api/placeholder/400/250",
+      tags: ["Sistemas Elétricos", "Baterias", "IoT", "Monitoramento"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Lucas-Christen",
       demoUrl: "#"
     },
     {
-      title: "API Gateway Otimizada",
-      description: "Gateway de API com cache inteligente, rate limiting, autenticação JWT e monitoramento de performance. Implementa load balancing e circuit breaker para alta disponibilidade.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
-      tags: ["Node.js", "Redis", "Docker", "Kubernetes", "Nginx"],
+      title: "Aplicativo de Otimização Porsche Cup",
+      description: "Desenvolvimento de aplicativos especializados para otimização de setups de carros em colaboração com engenheiro de corrida. Análise de desempenho e tomada de decisão baseada em dados.",
+      image: "/api/placeholder/400/250",
+      tags: ["React.js", "Análise de Dados", "Performance", "Setup"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Lucas-Christen",
       demoUrl: "#"
     },
     {
-      title: "Sistema de Análise de Logs",
-      description: "Plataforma ELK Stack customizada para processamento de logs em tempo real com machine learning para detecção de anomalias e correlação de eventos.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      tags: ["Elasticsearch", "Logstash", "Kibana", "Python", "ML"],
+      title: "IMU - Unidade de Medição Inercial",
+      description: "Desenvolvimento da nova IMU para projeto em parceria com a Renault. Foco na geração de dados para futuras análises e modelos preditivos.",
+      image: "/api/placeholder/400/250",
+      tags: ["IMU", "Sensores", "Renault", "Modelos Preditivos"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Lucas-Christen",
       demoUrl: "#"
     },
     {
-      title: "Aplicação E-commerce",
-      description: "Plataforma completa de e-commerce com carrinho de compras, pagamentos, gestão de estoque e painel administrativo. Otimizada para performance e SEO.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      tags: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
+      title: "Dashboard de Performance FSAE",
+      description: "Interface de visualização e análise de dados de telemetria em tempo real. Contribuiu para elevação da equipe da 25ª para a 13ª posição no ranking geral do Brasil.",
+      image: "/api/placeholder/400/250",
+      tags: ["Dashboard", "FSAE", "Análise", "Performance"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Lucas-Christen",
       demoUrl: "#"
     },
     {
-      title: "Chatbot Inteligente",
-      description: "Chatbot com processamento de linguagem natural, integração com APIs externas e interface conversacional moderna. Implementa machine learning para melhorar respostas.",
-      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
-      tags: ["Python", "TensorFlow", "React", "WebSocket", "NLP"],
+      title: "Sistema de Diagnóstico Automotivo",
+      description: "Sistema inteligente para diagnósticos e reparos baseado em dados de telemetria. Monitoramento de sistemas elétricos e mecânicos em tempo real.",
+      image: "/api/placeholder/400/250",
+      tags: ["Diagnóstico", "Manutenção", "IoT", "Machine Learning"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Lucas-Christen",
       demoUrl: "#"
     }
   ];
 
   return (
     <section id="projects" className="section-padding bg-background-primary">
-      <div className="container-custom">
+      <div className="container-custom px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,41 +70,43 @@ const ProjectsSection: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
-            Projetos <span className="gradient-text">Implementados</span>
+            Projetos <span className="gradient-text">Automotivos</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Portfólio de soluções desenvolvidas com foco em performance, escalabilidade e experiência do usuário
+            Experiência em desenvolvimento de sistemas de alta performance para competições automotivas e aplicações industriais
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
+              key={project.title}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.7, delay: index * 0.1 }}
             >
               <ProjectCard {...project} />
             </motion.div>
           ))}
         </div>
 
-        {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-center mt-16"
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="text-center mt-12"
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="btn-primary"
+          <a
+            href="https://github.com/Lucas-Christen"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary group"
           >
             Ver Mais Projetos no GitHub
-          </motion.button>
+            <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </a>
         </motion.div>
       </div>
     </section>

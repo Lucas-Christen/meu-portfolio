@@ -9,51 +9,50 @@ const Footer: React.FC = () => {
     {
       name: 'GitHub',
       icon: FaGithub,
-      url: 'https://github.com/lucaschristen',
+      url: 'https://github.com/Lucas-Christen',
       color: 'hover:text-gray-400'
     },
     {
       name: 'LinkedIn',
       icon: FaLinkedin,
-      url: 'https://linkedin.com/in/lucaschristen',
+      url: 'https://www.linkedin.com/in/lucas-f-christen-69327a21b/',
       color: 'hover:text-blue-400'
     },
     {
       name: 'Email',
       icon: FaEnvelope,
-      url: 'mailto:lucas@example.com',
+      url: 'mailto:lucas.f.christen@outlook.com',
       color: 'hover:text-red-400'
     }
   ];
 
   return (
-    <footer className="bg-background-secondary border-t border-text-secondary/20">
+    <footer className="bg-background-secondary border-t border-primary/20">
       <div className="container-custom px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           {/* Copyright */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-text-secondary text-sm"
-          >
-            © {currentYear} Lucas Christen. Todos os direitos reservados.
-          </motion.div>
+          <div className="text-center md:text-left">
+            <p className="text-text-secondary">
+              © {currentYear} <span className="text-text-primary font-semibold">Lucas Fernandes Christen</span>. 
+              Todos os direitos reservados.
+            </p>
+            <p className="text-text-secondary text-sm mt-1">
+              Desenvolvedor Full-Stack | Engenheiro de Dados | Especialista em Sistemas Automotivos
+            </p>
+          </div>
 
           {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex space-x-6"
-          >
-            {socialLinks.map((social) => (
+          <div className="flex space-x-6">
+            {socialLinks.map((social, index) => (
               <motion.a
                 key={social.name}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, y: -2 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className={`text-text-secondary transition-colors duration-300 ${social.color}`}
                 aria-label={social.name}
@@ -61,25 +60,31 @@ const Footer: React.FC = () => {
                 <social.icon size={20} />
               </motion.a>
             ))}
-          </motion.div>
+          </div>
+        </div>
 
-          {/* Made with Love */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex items-center space-x-2 text-text-secondary text-sm"
-          >
+        {/* Made with Love */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="text-center mt-8 pt-6 border-t border-primary/10"
+        >
+          <p className="text-text-secondary text-sm flex items-center justify-center space-x-2">
             <span>Feito com</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
-              <FaHeart className="text-red-500" size={14} />
+              <FaHeart className="text-primary" size={14} />
             </motion.div>
-            <span>por Lucas Christen</span>
-          </motion.div>
-        </div>
+            <span>e muito café</span>
+            <span className="text-accent">☕</span>
+          </p>
+          <p className="text-text-secondary text-xs mt-2">
+            Tecnologias: React, TypeScript, Tailwind CSS, Framer Motion
+          </p>
+        </motion.div>
       </div>
     </footer>
   );
