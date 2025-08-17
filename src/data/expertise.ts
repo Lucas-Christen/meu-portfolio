@@ -37,6 +37,6 @@ export const expertiseData: ExpertiseItem[] = [
     icon: FaUsers,
     title: "Liderança & Comunicação",
     description: "Liderei uma equipe técnica de 42 membros no projeto Fórmula SAE, alcançando um salto de 12 posições no ranking nacional. Sou adepto da resolução de problemas sob pressão e possuo comunicação eficaz para alinhar objetivos técnicos com a estratégia do projeto em múltiplos idiomas.",
-    tech: ['Liderança de Equipes', 'Resolução de Problemas', 'Inglês (Fluente)', 'Francês (B2)', 'Espanhol (B1)']
+    tech: ['Liderança de Equipes', 'Resolução de Problemas', 'Inglês (Fluente)', 'Francês (B2)', 'Espanhol (B1)', 'Mandarim (Iniciante)']
   }
 ];

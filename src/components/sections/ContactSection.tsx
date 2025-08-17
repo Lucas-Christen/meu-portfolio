@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 
@@ -6,11 +6,59 @@ const ContactSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { amount: 0.5 });
 
+  // Estados para gerenciar o formulário
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [resultMessage, setResultMessage] = useState('');
+
   useEffect(() => {
     if (isInView) {
       setActiveSection('contact');
     }
   }, [isInView, setActiveSection]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setResultMessage('');
+
+    const json = JSON.stringify({
+      ...formData,
+      access_key: "a89d23c4-72ad-471b-8646-75043dbed169", // <-- COLE SUA CHAVE AQUI
+      subject: `Nova mensagem de ${formData.name} do seu Portfólio`,
+    });
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json,
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setResultMessage('Mensagem enviada com sucesso!');
+        setFormData({ name: '', email: '', message: '' }); // Limpa o formulário
+      } else {
+        setResultMessage('Ocorreu um erro. Tente novamente.');
+      }
+    } catch (error) {
+      setResultMessage('Ocorreu um erro. Tente novamente.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" ref={ref} className="section-padding bg-background-secondary">
@@ -51,8 +99,7 @@ const ContactSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ 
             </div>
           </motion.div>
           <motion.form
-            action="https://formspree.io/f/SEU_ENDPOINT_AQUI" // Lembre-se de substituir pelo seu endpoint
-            method="POST"
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
@@ -60,17 +107,20 @@ const ContactSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ 
           >
             <div>
               <label htmlFor="name" className="sr-only">Nome</label>
-              <input type="text" name="name" id="name" placeholder="Seu Nome" required className="w-full bg-background-primary/50 border border-primary/20 rounded-lg p-3 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent" />
+              <input type="text" name="name" id="name" placeholder="Seu Nome" required value={formData.name} onChange={handleInputChange} className="w-full bg-background-primary/50 border border-primary/20 rounded-lg p-3 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent" />
             </div>
             <div>
               <label htmlFor="email" className="sr-only">Email</label>
-              <input type="email" name="email" id="email" placeholder="Seu Email" required className="w-full bg-background-primary/50 border border-primary/20 rounded-lg p-3 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent" />
+              <input type="email" name="email" id="email" placeholder="Seu Email" required value={formData.email} onChange={handleInputChange} className="w-full bg-background-primary/50 border border-primary/20 rounded-lg p-3 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent" />
             </div>
             <div>
               <label htmlFor="message" className="sr-only">Mensagem</label>
-              <textarea name="message" id="message" rows={5} placeholder="Sua Mensagem" required className="w-full bg-background-primary/50 border border-primary/20 rounded-lg p-3 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+              <textarea name="message" id="message" rows={5} placeholder="Sua Mensagem" required value={formData.message} onChange={handleInputChange} className="w-full bg-background-primary/50 border border-primary/20 rounded-lg p-3 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
             </div>
-            <button type="submit" className="btn-primary w-full">Enviar Mensagem</button>
+            <button type="submit" className="btn-primary w-full" disabled={isSubmitting}>
+              {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
+            </button>
+            {resultMessage && <p className="text-center text-sm mt-4">{resultMessage}</p>}
           </motion.form>
         </div>
       </div>
