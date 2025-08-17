@@ -110,7 +110,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* Performance Metrics */}
         <div className="grid grid-cols-3 gap-2 text-xs text-text-secondary">
           <div className="text-center">
-            <div className="text-accent font-bold">99.9%</div>
+            <div className="text-accent font-bold">100%</div>
             <div>Uptime</div>
           </div>
           <div className="text-center">

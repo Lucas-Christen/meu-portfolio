@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
             className="text-2xl font-bold text-accent cursor-pointer"
             onClick={() => scrollToSection('#home')}
           >
-            LC
+            Lucas Fernandes Christen
           </motion.div>
 
           {/* Desktop Navigation */}

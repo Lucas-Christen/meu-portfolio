@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaServer, FaDatabase, FaChartLine, FaCode } from 'react-icons/fa';
+import { FaDownload, FaUsers, FaTrophy, FaGlobe } from 'react-icons/fa';
 
+// --- Componente para Animação de Números ---
 const AnimatedNumber: React.FC<{ value: number; suffix?: string }> = ({ value, suffix = '' }) => {
   const [displayValue, setDisplayValue] = React.useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   React.useEffect(() => {
     if (isInView) {
@@ -13,7 +14,6 @@ const AnimatedNumber: React.FC<{ value: number; suffix?: string }> = ({ value, s
       const steps = 60;
       const increment = value / steps;
       let current = 0;
-
       const timer = setInterval(() => {
         current += increment;
         if (current >= value) {
@@ -23,7 +23,6 @@ const AnimatedNumber: React.FC<{ value: number; suffix?: string }> = ({ value, s
           setDisplayValue(Math.floor(current));
         }
       }, duration / steps);
-
       return () => clearInterval(timer);
     }
   }, [isInView, value]);
@@ -31,17 +30,21 @@ const AnimatedNumber: React.FC<{ value: number; suffix?: string }> = ({ value, s
   return <span ref={ref}>{displayValue}{suffix}</span>;
 };
 
+// --- Componente Principal da Seção "Sobre Mim" ---
 const AboutSection: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
+  
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  const skills = [
-    { name: 'Python', level: 95, icon: FaCode },
-    { name: 'React.js', level: 90, icon: FaCode },
-    { name: 'SQL', level: 88, icon: FaDatabase },
-    { name: 'Machine Learning', level: 85, icon: FaChartLine },
-    { name: 'Telemetria', level: 92, icon: FaServer },
-  ];
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    cardRef.current.style.setProperty('--mouse-x', `${x}px`);
+    cardRef.current.style.setProperty('--mouse-y', `${y}px`);
+  };
 
   return (
     <section id="about" className="section-padding bg-background-secondary">
@@ -51,15 +54,29 @@ const AboutSection: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="grid lg:grid-cols-2 gap-12 items-center"
+          className="grid lg:grid-cols-7 gap-12 items-center"
         >
-          {/* Left Column - Text Content */}
-          <div>
+          {/* Coluna da Esquerda (2/7) - Imagem */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-2 w-full aspect-[3/4] relative"
+          >
+            <img 
+              src="https://placehold.co/600x800/0A0A0A/FFD700?text=LC"
+              alt="Lucas Christen"
+              className="rounded-xl border-2 border-primary/20 w-full h-full object-cover shadow-2xl"
+            />
+          </motion.div>
+
+          {/* Coluna Central (3/7) - Narrativa Pessoal */}
+          <div className="lg:col-span-3">
             <motion.h2
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl font-bold mb-6 text-text-primary"
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-4xl font-bold mb-8 text-text-primary text-center"
             >
               Sobre Mim
             </motion.h2>
@@ -67,116 +84,82 @@ const AboutSection: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-4 text-text-secondary"
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="space-y-6 text-text-secondary text-lg leading-relaxed"
             >
               <p>
-                Desenvolvedor Full-Stack e Analista de Dados com uma <span className="text-accent font-semibold">paixão por otimizar performance</span>, 
-                seja em carros de corrida ou em código. Minha experiência única combina o desenvolvimento de sistemas de 
-                telemetria em tempo real com a criação de modelos preditivos e aplicações web.
+                Minha carreira é definida por uma busca incansável por <span className="text-accent font-semibold">performance</span>. Aprendi no automobilismo que a vitória está nos detalhes, nos dados e na capacidade de inovar sob pressão. Hoje, aplico essa mesma mentalidade para construir software.
               </p>
-              
               <p>
-                Atualmente, foco em <span className="text-accent font-semibold">transformar dados complexos em soluções de software</span> 
-                que geram resultados mensuráveis. Especialista em sistemas automotivos de alta performance, 
-                com experiência em equipes de competição como UTForce E-Racing FSAE.
-              </p>
-
-              <p>
-                Minha jornada inclui liderança de equipes de 42 membros, desenvolvimento de sistemas de bateria de íons de lítio, 
-                e criação de interfaces gráficas para aplicações de telemetria em tempo real.
+                Como Desenvolvedor Full-Stack e Engenheiro de Dados, minha missão é criar as ferramentas que transformam <span className="text-accent font-semibold">dados complexos em vantagem competitiva</span>. Eu não apenas analiso os dados — eu construo os sistemas de ponta a ponta que os coletam, processam e revelam a performance oculta que leva ao sucesso.
               </p>
             </motion.div>
-
-            {/* Skills Highlights */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-8"
+             <motion.a
+                href="/CVPTBR.pdf"
+                download
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="btn-primary group mt-10 inline-flex items-center"
+              >
+                Download CV
+                <FaDownload className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </motion.a>
+          </div>
+          
+          {/* Coluna da Direita (2/7) - Painel Interativo */}
+          <motion.div
+            ref={cardRef}
+            onMouseMove={handleMouseMove}
+            whileHover={{ y: -5, scale: 1.02 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="lg:col-span-2"
+          >
+             <div 
+              className="group relative bg-background-primary/50 backdrop-blur-sm border border-primary/20 rounded-xl p-8 overflow-hidden"
             >
-              <h3 className="text-xl font-semibold mb-4 text-text-primary">Principais Habilidades</h3>
-              <div className="space-y-3">
-                {skills.map((skill, index) => (
-                  <div key={skill.name} className="flex items-center space-x-3">
-                    <skill.icon className="text-accent text-lg" />
-                    <div className="flex-1">
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="text-text-secondary">{skill.name}</span>
-                        <span className="text-accent font-mono">{skill.level}%</span>
-                      </div>
-                      <div className="w-full bg-background-primary rounded-full h-2">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={isInView ? { width: `${skill.level}%` } : {}}
-                          transition={{ duration: 1, delay: 0.8 + index * 0.1 }}
-                          className="bg-gradient-to-r from-primary to-accent h-2 rounded-full"
-                        />
-                      </div>
+              <div 
+                className="pointer-events-none absolute -inset-px rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  background: 'radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255, 215, 0, 0.15), transparent 40%)',
+                }}
+              />
+              <div className="relative z-10">
+                <h3 className="text-xl font-bold mb-6 text-text-primary text-center">
+                  Minha Abordagem em Números
+                </h3>
+                <div className="space-y-6 divide-y divide-primary/10">
+                  <div className="flex items-center pt-4 first:pt-0">
+                    <div className="relative mr-4">
+                      <FaUsers className="text-accent text-3xl" />
+                      <div className="absolute -inset-2 bg-accent/20 rounded-full blur-md animate-pulse"></div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-text-primary"><AnimatedNumber value={42} />+</div>
+                      <div className="text-text-secondary text-sm">Membros Liderados no Projeto FSAE</div>
                     </div>
                   </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Column - Operational Status */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-background-primary/50 backdrop-blur-sm border border-primary/20 rounded-lg p-8"
-          >
-            <h3 className="text-2xl font-bold mb-6 text-text-primary text-center">
-              Status Operacional
-            </h3>
-            
-            <div className="space-y-6">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-accent mb-2">
-                  <AnimatedNumber value={42} />
-                </div>
-                <div className="text-text-secondary">Membros Liderados</div>
-              </div>
-              
-              <div className="text-center">
-                <div className="text-4xl font-bold text-accent mb-2">
-                  <AnimatedNumber value={25} />
-                </div>
-                <div className="text-text-secondary">→ 13ª Posição</div>
-                <div className="text-sm text-text-secondary">Ranking FSAE Brasil</div>
-              </div>
-              
-              <div className="text-center">
-                <div className="text-4xl font-bold text-accent mb-2">
-                  <AnimatedNumber value={99} suffix="%" />
-                </div>
-                <div className="text-text-secondary">Performance Garantida</div>
-              </div>
-            </div>
-
-            {/* System Status */}
-            <div className="mt-8 pt-6 border-t border-primary/20">
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-text-secondary">Sistema de Telemetria</span>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-green-400 text-sm">ONLINE</span>
+                  <div className="flex items-center pt-4">
+                    <div className="relative mr-4">
+                      <FaTrophy className="text-accent text-3xl" />
+                      <div className="absolute -inset-2 bg-accent/20 rounded-full blur-md animate-pulse delay-200"></div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-text-primary"><AnimatedNumber value={12} /></div>
+                      <div className="text-text-secondary text-sm">Posições Avançadas no Ranking</div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-text-secondary">Análise de Dados</span>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                    <span className="text-accent text-sm">ATIVO</span>
-                  </div>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-text-secondary">Machine Learning</span>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                    <span className="text-primary text-sm">PROCESSANDO</span>
+                  <div className="flex items-center pt-4">
+                    <div className="relative mr-4">
+                      <FaGlobe className="text-accent text-3xl" />
+                      <div className="absolute -inset-2 bg-accent/20 rounded-full blur-md animate-pulse delay-400"></div>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-text-primary"><AnimatedNumber value={6} /></div>
+                      <div className="text-text-secondary text-sm">Idiomas para Comunicação Global</div>
+                    </div>
                   </div>
                 </div>
               </div>
