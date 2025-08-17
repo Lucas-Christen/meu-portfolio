@@ -1,36 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaDownload, FaUsers, FaTrophy, FaGlobe } from 'react-icons/fa';
+import AnimatedNumber from '../ui/AnimatedNumber'; // Importação do novo componente
 
-// --- Componente para Animação de Números ---
-const AnimatedNumber: React.FC<{ value: number; suffix?: string }> = ({ value, suffix = '' }) => {
-  const [displayValue, setDisplayValue] = React.useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  React.useEffect(() => {
-    if (isInView) {
-      const duration = 2000;
-      const steps = 60;
-      const increment = value / steps;
-      let current = 0;
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= value) {
-          setDisplayValue(value);
-          clearInterval(timer);
-        } else {
-          setDisplayValue(Math.floor(current));
-        }
-      }, duration / steps);
-      return () => clearInterval(timer);
-    }
-  }, [isInView, value]);
-
-  return <span ref={ref}>{displayValue}{suffix}</span>;
-};
-
-// --- Componente Principal da Seção "Sobre Mim" ---
 const AboutSection: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
@@ -56,7 +28,6 @@ const AboutSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="grid lg:grid-cols-7 gap-12 items-center"
         >
-          {/* Coluna da Esquerda (2/7) - Imagem */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -64,13 +35,12 @@ const AboutSection: React.FC = () => {
             className="lg:col-span-2 w-full aspect-[3/4] relative"
           >
             <img 
-              src="https://placehold.co/600x800/0A0A0A/FFD700?text=LC"
+              src="/images/profile.jpg" // Lembre-se de substituir pela sua foto
               alt="Lucas Christen"
               className="rounded-xl border-2 border-primary/20 w-full h-full object-cover shadow-2xl"
             />
           </motion.div>
 
-          {/* Coluna Central (3/7) - Narrativa Pessoal */}
           <div className="lg:col-span-3">
             <motion.h2
               initial={{ opacity: 0, x: -50 }}
@@ -78,7 +48,7 @@ const AboutSection: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-4xl font-bold mb-8 text-text-primary text-center"
             >
-              Sobre Mim
+              A Interseção entre a Pista e o Código
             </motion.h2>
             
             <motion.div
@@ -107,7 +77,6 @@ const AboutSection: React.FC = () => {
               </motion.a>
           </div>
           
-          {/* Coluna da Direita (2/7) - Painel Interativo */}
           <motion.div
             ref={cardRef}
             onMouseMove={handleMouseMove}
@@ -123,7 +92,7 @@ const AboutSection: React.FC = () => {
               <div 
                 className="pointer-events-none absolute -inset-px rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
-                  background: 'radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255, 215, 0, 0.15), transparent 40%)',
+                  background: 'radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(220, 0, 0, 0.15), transparent 40%)',
                 }}
               />
               <div className="relative z-10">

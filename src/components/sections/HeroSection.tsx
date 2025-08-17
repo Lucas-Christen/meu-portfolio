@@ -1,54 +1,8 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { FaRocket, FaChartLine, FaUsers, FaDownload } from 'react-icons/fa';
+import StatCard from '../ui/StatCard'; // Importação do novo componente
 
-// --- Componente para o Card de Estatística Interativo ---
-const StatCard: React.FC<{
-  icon: React.ElementType;
-  value: string;
-  label: string;
-  index: number;
-}> = ({ icon: Icon, value, label, index }) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    cardRef.current.style.setProperty('--mouse-x', `${x}px`);
-    cardRef.current.style.setProperty('--mouse-y', `${y}px`);
-  };
-
-  return (
-    <motion.div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-      className="group relative bg-background-secondary/50 backdrop-blur-sm border border-accent/20 rounded-lg p-6 overflow-hidden"
-    >
-      <div 
-        className="pointer-events-none absolute -inset-px rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{
-          background: 'radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(220, 0, 0, 0.15), transparent 40%)',
-        }}
-      />
-      <div className="relative z-10 text-center">
-        <div className="relative inline-block mb-2">
-          <Icon className="text-accent text-3xl" />
-          <div className="absolute -inset-2 bg-accent/20 rounded-full blur-md animate-pulse"></div>
-        </div>
-        <div className="text-3xl font-bold text-text-primary mb-1">{value}</div>
-        <div className="text-text-secondary text-sm">{label}</div>
-      </div>
-    </motion.div>
-  );
-};
-
-
-// --- Componente HeroSection Principal ---
 const HeroSection: React.FC = () => {
   const stats = [
     { label: 'Posições Avançadas (Ranking FSAE)', value: '12+', icon: FaRocket },
@@ -58,7 +12,6 @@ const HeroSection: React.FC = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background-primary">
-      {/* Fundo Dinâmico */}
       <motion.div 
         className="absolute inset-0 z-0"
         style={{
@@ -68,7 +21,6 @@ const HeroSection: React.FC = () => {
 
       <div className="container-custom px-4 relative z-10">
         <div className="text-center">
-          {/* Status Bar */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -79,7 +31,6 @@ const HeroSection: React.FC = () => {
             <span className="text-text-secondary text-sm font-mono">Sistema Operacional: Lucas Christen v3.0</span>
           </motion.div>
 
-          {/* Título Principal */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -91,18 +42,15 @@ const HeroSection: React.FC = () => {
             <span className="text-accent">Christen</span>
           </motion.h1>
 
-          {/* Subtítulo */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
             className="text-xl md:text-2xl text-text-secondary mb-12 max-w-3xl mx-auto"
           >
-            
             <span className="text-text-primary font-semibold">Desenvolvedor Full-Stack | Engenheiro de Dados |  Especialista em Sistemas Automotivos de Alta Performance</span>
           </motion.p>
 
-          {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {stats.map((stat, index) => (
               <StatCard
@@ -115,7 +63,6 @@ const HeroSection: React.FC = () => {
             ))}
           </div>
 
-          {/* Botões CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -141,7 +88,6 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Indicador de Scroll */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
