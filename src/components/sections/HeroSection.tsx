@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaRocket, FaChartLine, FaUsers, FaDownload } from 'react-icons/fa';
-import StatCard from '../ui/StatCard';
+import { FaRocket, FaChartLine, FaUsers, FaDownload } from 'react-icons/fa';import StatCard from '../ui/StatCard';
+import { useTranslation } from 'react-i18next'; // 1. Importe o hook
 
 const HeroSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ setActiveSection }) => {
+  const { t } = useTranslation(); // 2. Inicialize o hook
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { amount: 0.5 });
 
@@ -14,47 +15,28 @@ const HeroSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ set
   }, [isInView, setActiveSection]);
 
   const stats = [
-    { label: 'Posições Avançadas (Ranking FSAE)', value: '12+', icon: FaRocket },
-    { label: 'Membros Liderados (UTForce)', value: '42+', icon: FaUsers },
-    { label: 'Projetos de Dados & IoT', value: '5+', icon: FaChartLine },
+    { label: t('hero.stat1'), value: '12+', icon: FaRocket },
+    { label: t('hero.stat2'), value: '42+', icon: FaUsers },
+    { label: t('hero.stat3'), value: '5+', icon: FaChartLine },
   ];
 
   return (
-    <section id="home" ref={ref} className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background-primary">
-      <motion.div 
-        className="absolute inset-0 z-0"
-        style={{
-          background: 'radial-gradient(circle at 50% 50%, #1A1A1A 0%, #0A0A0A 70%)'
-        }}
-      />
+    <section id="home" ref={ref} className="min-h-screen flex items-center ...">
+      {/* ... */}
       <div className="container-custom px-4 relative z-10">
         <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center space-x-2 bg-background-secondary/50 backdrop-blur-sm border border-accent/20 rounded-full px-4 py-2 mb-8"
-          >
+          <motion.div /* ... */ >
             <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-            <span className="text-text-secondary text-sm font-mono">Sistema Operacional: Lucas Christen v3.0</span>
+            {/* 3. Use a função t() para traduzir */}
+            <span className="text-text-secondary text-sm font-mono">{t('hero.statusBar')}</span>
           </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold mb-6"
-          >
-            <span className="text-accent">Lucas Fernandes</span>
+          <motion.h1 /* ... */ >
+            <span className="text-accent">{t('hero.title1')}</span>
             <br />
-            <span className="text-accent">Christen</span>
+            <span className="text-accent">{t('hero.title2')}</span>
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-xl md:text-2xl text-text-secondary mb-12 max-w-3xl mx-auto"
-          >
-            <span className="text-text-primary font-semibold">Desenvolvedor Full-Stack | Engenheiro de Dados |  Especialista em Sistemas Automotivos de Alta Performance</span>
+          <motion.p /* ... */ >
+            <span className="text-text-primary font-semibold">{t('hero.subtitle')}</span>
           </motion.p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {stats.map((stat, index) => (
@@ -67,37 +49,19 @@ const HeroSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ set
               />
             ))}
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
+          <motion.div /* ... */ >
             <a href="#projects" className="btn-primary group">
-              Ver Projetos
+              {t('hero.buttonProjects')}
               <FaRocket className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
             <a href="/CVPTBR.pdf" download className="btn-secondary group">
-              Download CV
+              {t('hero.buttonCV')}
               <FaDownload className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
         </div>
       </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <div className="w-6 h-10 border-2 border-accent rounded-full flex justify-center p-1">
-          <motion.div
-            animate={{ y: [0, 16, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-1 h-2 bg-accent rounded-full"
-          ></motion.div>
-        </div>
-      </motion.div>
+      {/* ... */}
     </section>
   );
 };

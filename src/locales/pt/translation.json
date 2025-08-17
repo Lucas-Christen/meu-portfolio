@@ -1,0 +1,60 @@
+{
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre",
+    "expertise": "Expertise",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "statusBar": "Sistema Operacional: Lucas Christen v3.0",
+    "title1": "Lucas Fernandes",
+    "title2": "Christen",
+    "subtitle": "Desenvolvedor Full-Stack | Engenheiro de Dados | Especialista em Sistemas Automotivos de Alta Performance",
+    "stat1": "Posições Avançadas (Ranking FSAE)",
+    "stat2": "Membros Liderados (UTForce)",
+    "stat3": "Projetos de Dados & IoT",
+    "buttonProjects": "Ver Projetos",
+    "buttonCV": "Download CV"
+  },
+  "about": {
+    "title": "A Interseção entre a Pista e o Código",
+    "p1": "Minha carreira é definida por uma busca incansável por performance. Aprendi no automobilismo que a vitória está nos detalhes, nos dados e na capacidade de inovar sob pressão. Hoje, aplico essa mesma mentalidade para construir software.",
+    "p2": "Como Desenvolvedor Full-Stack e Engenheiro de Dados, minha missão é criar as ferramentas que transformam dados complexos em vantagem competitiva. Eu não apenas analiso os dados — eu construo os sistemas de ponta a ponta que os coletam, processam e revelam a performance oculta que leva ao sucesso.",
+    "cardTitle": "Minha Abordagem em Números",
+    "stat1": "Membros Liderados no Projeto FSAE",
+    "stat2": "Posições Avançadas no Ranking",
+    "stat3": "Idiomas para Comunicação Global"
+  },
+  "expertise": {
+    "title": "Áreas de",
+    "titleAccent": "Expertise",
+    "subtitle": "Minha abordagem para construir soluções inovadoras, combinando desenvolvimento de software, análise de dados e engenharia de sistemas.",
+    "techLabel": "Tecnologias principais:",
+    "tabs": {
+      "fullstack_desc": "Arquiteto e desenvolvo aplicações de ponta a ponta, desde APIs robustas em Node.js e Python até interfaces reativas com React. Minha experiência se traduz em sistemas como dashboards de telemetria e aplicativos de produtividade multiplataforma, sempre com foco em código limpo, escalabilidade e performance.",
+      "data_desc": "Sou especialista em todo o ciclo de vida do dado: da aquisição em ambientes de alta complexidade (telemetria) à criação de pipelines de processamento e aplicação de modelos preditivos com Scikit-learn. Transformo dados brutos em dashboards interativos que revelam insights estratégicos.",
+      "iot_desc": "Projeto e implemento soluções de hardware e software para coleta de dados em tempo real. Tenho experiência prática com ESP32, Raspberry Pi e comunicação LoRa para garantir a integridade e transmissão de dados em ambientes de alta interferência eletromagnética, como o automobilismo.",
+      "leadership_desc": "Liderei uma equipe técnica de 42 membros no projeto Fórmula SAE, alcançando um salto de 12 posições no ranking nacional. Sou adepto da resolução de problemas sob pressão e possuo comunicação eficaz para alinhar objetivos técnicos com a estratégia do projeto em múltiplos idiomas."
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "titleAccent": "em Destaque",
+    "subtitle": "Uma seleção de trabalhos que demonstram minha paixão por resolver problemas complexos com tecnologia e dados.",
+    "buttonMore": "Ver Mais no GitHub"
+  },
+  "contact": {
+    "title": "Entre em",
+    "titleAccent": "Contato",
+    "subtitle": "Estou aberto a novas oportunidades e colaborações. Vamos construir algo incrível juntos.",
+    "infoTitle": "Informações de Contato",
+    "formName": "Seu Nome",
+    "formEmail": "Seu Email",
+    "formMessage": "Sua Mensagem",
+    "formButton": "Enviar Mensagem",
+    "formSubmitting": "Enviando...",
+    "formSuccess": "Mensagem enviada com sucesso!",
+    "formError": "Ocorreu um erro. Tente novamente."
+  }
+}

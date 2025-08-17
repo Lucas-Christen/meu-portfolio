@@ -1,0 +1,60 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "expertise": "Expertise",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "statusBar": "Système d'exploitation : Lucas Christen v3.0",
+    "title1": "Lucas Fernandes",
+    "title2": "Christen",
+    "subtitle": "Développeur Full-Stack | Ingénieur de Données | Spécialiste des Systèmes Automobiles de Haute Performance",
+    "stat1": "Positions Avancées (Classement FSAE)",
+    "stat2": "Membres Dirigés (UTForce)",
+    "stat3": "Projets de Données et IoT",
+    "buttonProjects": "Voir les Projets",
+    "buttonCV": "Télécharger le CV"
+  },
+  "about": {
+    "title": "L'Intersection entre la Piste et le Code",
+    "p1": "Ma carrière est définie par une quête incessante de performance. J'ai appris dans le sport automobile que la victoire réside dans les détails, dans les données et dans la capacité à innover sous pression. Aujourd'hui, j'applique cette même mentalité pour créer des logiciels.",
+    "p2": "En tant que Développeur Full-Stack et Ingénieur de Données, ma mission est de créer les outils qui transforment les données complexes en avantage concurrentiel. Je n'analyse pas seulement les données, je construis les systèmes de bout en bout qui les collectent, les traitent et révèlent les performances cachées qui mènent au succès.",
+    "cardTitle": "Mon Approche en Chiffres",
+    "stat1": "Membres Dirigés dans le Projet FSAE",
+    "stat2": "Positions Avancées au Classement",
+    "stat3": "Langues pour une Communication Mondiale"
+  },
+  "expertise": {
+    "title": "Domaines d'",
+    "titleAccent": "Expertise",
+    "subtitle": "Mon approche pour construire des solutions innovantes, en combinant le développement de logiciels, l'analyse de données et l'ingénierie des systèmes.",
+    "techLabel": "Technologies principales :",
+    "tabs": {
+      "fullstack_desc": "Je conçois et développe des applications de bout en bout, des API robustes en Node.js et Python aux interfaces réactives avec React. Mon expérience se traduit par des systèmes tels que des tableaux de bord de télémétrie et des applications de productivité multiplateformes, toujours en mettant l'accent sur un code propre, l'évolutivité et les performances.",
+      "data_desc": "Je suis spécialiste de l'ensemble du cycle de vie des données : de l'acquisition dans des environnements très complexes (télémétrie) à la création de pipelines de traitement et à l'application de modèles prédictifs avec Scikit-learn. Je transforme les données brutes en tableaux de bord interactifs qui révèlent des informations stratégiques.",
+      "iot_desc": "Je conçois et mets en œuvre des solutions matérielles et logicielles pour la collecte de données en temps réel. J'ai une expérience pratique avec l'ESP32, le Raspberry Pi et la communication LoRa pour garantir l'intégrité et la transmission des données dans des environnements à fortes interférences électromagnétiques, comme le sport automobile.",
+      "leadership_desc": "J'ai dirigé une équipe technique de 42 membres dans le projet Formule SAE, réalisant un saut de 12 positions au classement national. Je suis adepte de la résolution de problèmes sous pression et je possède des compétences de communication efficaces pour aligner les objectifs techniques avec la stratégie du projet en plusieurs langues."
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "titleAccent": "en Vedette",
+    "subtitle": "Une sélection de travaux qui démontrent ma passion pour la résolution de problèmes complexes avec la technologie et les données.",
+    "buttonMore": "Voir Plus sur GitHub"
+  },
+  "contact": {
+    "title": "Prendre",
+    "titleAccent": "Contact",
+    "subtitle": "Je suis ouvert à de nouvelles opportunités et collaborations. Construisons quelque chose d'incroyable ensemble.",
+    "infoTitle": "Informations de Contact",
+    "formName": "Votre Nom",
+    "formEmail": "Votre Email",
+    "formMessage": "Votre Message",
+    "formButton": "Envoyer le Message",
+    "formSubmitting": "Envoi en cours...",
+    "formSuccess": "Message envoyé avec succès !",
+    "formError": "Une erreur s'est produite. Veuillez réessayer."
+  }
+}

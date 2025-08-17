@@ -1,0 +1,60 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "expertise": "Expertise",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "statusBar": "Operating System: Lucas Christen v3.0",
+    "title1": "Lucas Fernandes",
+    "title2": "Christen",
+    "subtitle": "Full-Stack Developer | Data Engineer | High-Performance Automotive Systems Specialist",
+    "stat1": "Advanced Positions (FSAE Ranking)",
+    "stat2": "Members Led (UTForce)",
+    "stat3": "Data & IoT Projects",
+    "buttonProjects": "View Projects",
+    "buttonCV": "Download CV"
+  },
+  "about": {
+    "title": "The Intersection of the Racetrack and Code",
+    "p1": "My career is defined by a relentless pursuit of performance. I learned in motorsport that victory lies in the details, in the data, and in the ability to innovate under pressure. Today, I apply that same mentality to building software.",
+    "p2": "As a Full-Stack Developer and Data Engineer, my mission is to create the tools that transform complex data into a competitive advantage. I don't just analyze data—I build the end-to-end systems that collect, process, and reveal the hidden performance that leads to success.",
+    "cardTitle": "My Approach in Numbers",
+    "stat1": "Members Led in the FSAE Project",
+    "stat2": "Advanced Positions in the Ranking",
+    "stat3": "Languages for Global Communication"
+  },
+  "expertise": {
+    "title": "Areas of",
+    "titleAccent": "Expertise",
+    "subtitle": "My approach to building innovative solutions, combining software development, data analysis, and systems engineering.",
+    "techLabel": "Main technologies:",
+    "tabs": {
+      "fullstack_desc": "I design and develop end-to-end applications, from robust APIs in Node.js and Python to reactive interfaces with React. My experience translates into systems like telemetry dashboards and cross-platform productivity applications, always with a focus on clean code, scalability, and performance.",
+      "data_desc": "I specialize in the entire data lifecycle: from acquisition in highly complex environments (telemetry) to the creation of processing pipelines and the application of predictive models with Scikit-learn. I transform raw data into interactive dashboards that reveal strategic insights.",
+      "iot_desc": "I design and implement hardware and software solutions for real-time data collection. I have hands-on experience with ESP32, Raspberry Pi, and LoRa communication to ensure data integrity and transmission in environments with high electromagnetic interference, such as motorsport.",
+      "leadership_desc": "I led a technical team of 42 members in the Formula SAE project, achieving a 12-position jump in the national ranking. I am adept at problem-solving under pressure and have effective communication skills to align technical objectives with project strategy in multiple languages."
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "titleAccent": "in the Spotlight",
+    "subtitle": "A selection of works that demonstrate my passion for solving complex problems with technology and data.",
+    "buttonMore": "See More on GitHub"
+  },
+  "contact": {
+    "title": "Get in",
+    "titleAccent": "Touch",
+    "subtitle": "I am open to new opportunities and collaborations. Let's build something amazing together.",
+    "infoTitle": "Contact Information",
+    "formName": "Your Name",
+    "formEmail": "Your Email",
+    "formMessage": "Your Message",
+    "formButton": "Send Message",
+    "formSubmitting": "Sending...",
+    "formSuccess": "Message sent successfully!",
+    "formError": "An error occurred. Please try again."
+  }
+}
