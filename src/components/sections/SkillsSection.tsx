@@ -1,46 +1,19 @@
-import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  FaServer, FaChartLine, FaCode, FaUsers
-} from 'react-icons/fa';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { expertiseData, ExpertiseItem } from '../../data/expertise'; // Importe o tipo também
 
-// --- Dados das Áreas de Expertise (com descrições aprofundadas) ---
-const expertiseData = [
-  {
-    id: 'full-stack',
-    icon: FaCode,
-    title: "Desenvolvimento Full-Stack",
-    description: "Arquiteto e desenvolvo aplicações de ponta a ponta, desde APIs robustas em Node.js e Python até interfaces reativas com React. Minha experiência se traduz em sistemas como dashboards de telemetria e aplicativos de produtividade multiplataforma, sempre com foco em código limpo, escalabilidade e performance.",
-    tech: ['React.js', 'Node.js', 'Python', 'Flask', 'SQL', 'Docker']
-  },
-  {
-    id: 'data-engineering',
-    icon: FaChartLine,
-    title: "Engenharia & Análise de Dados",
-    description: "Sou especialista em todo o ciclo de vida do dado: da aquisição em ambientes de alta complexidade (telemetria) à criação de pipelines de processamento e aplicação de modelos preditivos com Scikit-learn. Transformo dados brutos em dashboards interativos que revelam insights estratégicos.",
-    tech: ['Scikit-learn', 'PySpark', 'Pandas', 'MongoDB', 'Machine Learning']
-  },
-  {
-    id: 'iot',
-    icon: FaServer,
-    title: "Sistemas Embarcados & IoT",
-    description: "Projeto e implemento soluções de hardware e software para coleta de dados em tempo real. Tenho experiência prática com ESP32, Raspberry Pi e comunicação LoRa para garantir a integridade e transmissão de dados em ambientes de alta interferência eletromagnética, como o automobilismo.",
-    tech: ['Telemetria', 'ESP32', 'Raspberry Pi', 'LoRa', 'C++', 'Electron.js']
-  },
-  {
-    id: 'leadership',
-    icon: FaUsers,
-    title: "Liderança & Comunicação",
-    description: "Liderei uma equipe técnica de 42 membros no projeto Fórmula SAE, alcançando um salto de 12 posições no ranking nacional. Sou adepto da resolução de problemas sob pressão e possuo comunicação eficaz para alinhar objetivos técnicos com a estratégia do projeto em múltiplos idiomas.",
-    tech: ['Liderança de Equipes', 'Resolução de Problemas', 'Inglês (Fluente)', 'Francês (B2)', 'Espanhol (B1)', 'Mandarim (Iniciante)']
-  }
-];
-
-// --- Componente Principal da Seção ---
-const SkillsSection: React.FC = () => {
+const SkillsSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ setActiveSection }) => {
   const [selectedTab, setSelectedTab] = useState(expertiseData[0]);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { amount: 0.5 });
 
+  useEffect(() => {
+    if (isInView) {
+      setActiveSection('skills');
+    }
+  }, [isInView, setActiveSection]);
+
+  const contentRef = useRef<HTMLDivElement>(null);
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!contentRef.current) return;
     const rect = contentRef.current.getBoundingClientRect();
@@ -51,7 +24,7 @@ const SkillsSection: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="section-padding bg-background-secondary">
+    <section id="skills" ref={ref} className="section-padding bg-background-secondary">
       <div className="container-custom px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -60,17 +33,16 @@ const SkillsSection: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
-            Áreas de <span className="gradient-text">Expertise</span>
+            Áreas de <span className="text-accent">Expertise</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-3xl mx-auto">
             Minha abordagem para construir soluções inovadoras, combinando desenvolvimento de software, análise de dados e engenharia de sistemas.
           </p>
         </motion.div>
-
         <div className="flex flex-col lg:flex-row gap-8 min-h-[450px]">
-          {/* Menu Lateral (Abas) */}
           <div className="flex lg:flex-col gap-2">
-            {expertiseData.map((item) => (
+            {expertiseData.map((item: ExpertiseItem) => (
+
               <button
                 key={item.id}
                 className={`relative w-full text-left p-4 rounded-lg transition-colors duration-300 ${
@@ -93,8 +65,6 @@ const SkillsSection: React.FC = () => {
               </button>
             ))}
           </div>
-
-          {/* Painel de Conteúdo com Efeito Spotlight */}
           <div 
             ref={contentRef}
             onMouseMove={handleMouseMove}
@@ -103,11 +73,10 @@ const SkillsSection: React.FC = () => {
             <div 
               className="pointer-events-none absolute -inset-px rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               style={{
-                background: 'radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(100, 255, 218, 0.1), transparent 40%)',
+                background: 'radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(220, 0, 0, 0.1), transparent 40%)',
               }}
             />
             <AnimatePresence mode="wait">
-              {/* Adicionado 'flex flex-col justify-between' para distribuir o conteúdo verticalmente */}
               <motion.div
                 key={selectedTab.id}
                 initial={{ y: 10, opacity: 0 }}
@@ -116,18 +85,14 @@ const SkillsSection: React.FC = () => {
                 transition={{ duration: 0.3 }}
                 className="w-full h-full relative z-10 flex flex-col justify-between"
               >
-                {/* Agrupador para a parte superior (título e descrição) */}
                 <div>
-                  {/* Tamanho do título aumentado */}
                   <h3 className="text-4xl font-bold text-text-primary mb-4">{selectedTab.title}</h3>
-                  {/* Tamanho da descrição aumentado e com mais espaçamento entre linhas */}
                   <p className="text-text-secondary text-lg leading-relaxed mb-8">{selectedTab.description}</p>
                 </div>
-                {/* Agrupador para a parte inferior (tecnologias) */}
                 <div>
                   <h4 className="text-md font-semibold text-text-secondary mb-4">Tecnologias principais:</h4>
                   <div className="flex flex-wrap gap-3">
-                    {selectedTab.tech.map(t => (
+                    {selectedTab.tech.map((t: string) => (
                       <motion.span
                         key={t}
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -148,5 +113,4 @@ const SkillsSection: React.FC = () => {
     </section>
   );
 };
-
 export default SkillsSection;

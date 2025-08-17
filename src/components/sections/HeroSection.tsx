@@ -1,9 +1,18 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useEffect } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { FaRocket, FaChartLine, FaUsers, FaDownload } from 'react-icons/fa';
-import StatCard from '../ui/StatCard'; // Importação do novo componente
+import StatCard from '../ui/StatCard';
 
-const HeroSection: React.FC = () => {
+const HeroSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ setActiveSection }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { amount: 0.5 });
+
+  useEffect(() => {
+    if (isInView) {
+      setActiveSection('home');
+    }
+  }, [isInView, setActiveSection]);
+
   const stats = [
     { label: 'Posições Avançadas (Ranking FSAE)', value: '12+', icon: FaRocket },
     { label: 'Membros Liderados (UTForce)', value: '42+', icon: FaUsers },
@@ -11,14 +20,13 @@ const HeroSection: React.FC = () => {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background-primary">
+    <section id="home" ref={ref} className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background-primary">
       <motion.div 
         className="absolute inset-0 z-0"
         style={{
           background: 'radial-gradient(circle at 50% 50%, #1A1A1A 0%, #0A0A0A 70%)'
         }}
       />
-
       <div className="container-custom px-4 relative z-10">
         <div className="text-center">
           <motion.div
@@ -30,7 +38,6 @@ const HeroSection: React.FC = () => {
             <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
             <span className="text-text-secondary text-sm font-mono">Sistema Operacional: Lucas Christen v3.0</span>
           </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -41,7 +48,6 @@ const HeroSection: React.FC = () => {
             <br />
             <span className="text-accent">Christen</span>
           </motion.h1>
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -50,7 +56,6 @@ const HeroSection: React.FC = () => {
           >
             <span className="text-text-primary font-semibold">Desenvolvedor Full-Stack | Engenheiro de Dados |  Especialista em Sistemas Automotivos de Alta Performance</span>
           </motion.p>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {stats.map((stat, index) => (
               <StatCard
@@ -62,32 +67,23 @@ const HeroSection: React.FC = () => {
               />
             ))}
           </div>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a
-              href="#projects"
-              className="btn-primary group"
-            >
+            <a href="#projects" className="btn-primary group">
               Ver Projetos
               <FaRocket className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a
-              href="/CVPTBR.pdf"
-              download
-              className="btn-secondary group"
-            >
+            <a href="/CVPTBR.pdf" download className="btn-secondary group">
               Download CV
               <FaDownload className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
         </div>
       </div>
-
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -105,5 +101,4 @@ const HeroSection: React.FC = () => {
     </section>
   );
 };
-
 export default HeroSection;

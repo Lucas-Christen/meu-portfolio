@@ -1,14 +1,19 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaDownload, FaUsers, FaTrophy, FaGlobe } from 'react-icons/fa';
-import AnimatedNumber from '../ui/AnimatedNumber'; // Importação do novo componente
+import AnimatedNumber from '../ui/AnimatedNumber';
 
-const AboutSection: React.FC = () => {
+const AboutSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ setActiveSection }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
-  
-  const cardRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { amount: 0.5 });
 
+  useEffect(() => {
+    if (isInView) {
+      setActiveSection('about');
+    }
+  }, [isInView, setActiveSection]);
+
+  const cardRef = useRef<HTMLDivElement>(null);
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
@@ -19,41 +24,38 @@ const AboutSection: React.FC = () => {
   };
 
   return (
-    <section id="about" className="section-padding bg-background-secondary">
+    <section id="about" ref={ref} className="section-padding bg-background-secondary">
       <div className="container-custom px-4">
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="grid lg:grid-cols-7 gap-12 items-center"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-2 w-full aspect-[3/4] relative"
           >
             <img 
-              src="/images/profile.jpg" // Lembre-se de substituir pela sua foto
+              src="/images/profile.jpg"
               alt="Lucas Christen"
               className="rounded-xl border-2 border-primary/20 w-full h-full object-cover shadow-2xl"
             />
           </motion.div>
-
           <div className="lg:col-span-3">
             <motion.h2
               initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-4xl font-bold mb-8 text-text-primary text-center"
             >
               A Interseção entre a Pista e o Código
             </motion.h2>
-            
             <motion.div
               initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="space-y-6 text-text-secondary text-lg leading-relaxed"
             >
@@ -68,7 +70,7 @@ const AboutSection: React.FC = () => {
                 href="/CVPTBR.pdf"
                 download
                 initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="btn-primary group mt-10 inline-flex items-center"
               >
@@ -76,19 +78,16 @@ const AboutSection: React.FC = () => {
                 <FaDownload className="ml-2 group-hover:translate-x-1 transition-transform" />
               </motion.a>
           </div>
-          
           <motion.div
             ref={cardRef}
             onMouseMove={handleMouseMove}
             whileHover={{ y: -5, scale: 1.02 }}
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
             className="lg:col-span-2"
           >
-             <div 
-              className="group relative bg-background-primary/50 backdrop-blur-sm border border-primary/20 rounded-xl p-8 overflow-hidden"
-            >
+             <div className="group relative bg-background-primary/50 backdrop-blur-sm border border-primary/20 rounded-xl p-8 overflow-hidden">
               <div 
                 className="pointer-events-none absolute -inset-px rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
@@ -139,5 +138,4 @@ const AboutSection: React.FC = () => {
     </section>
   );
 };
-
 export default AboutSection;

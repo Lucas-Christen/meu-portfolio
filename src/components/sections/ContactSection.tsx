@@ -1,76 +1,19 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
+import React, { useRef, useEffect } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 
-const ContactSection: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+const ContactSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ setActiveSection }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { amount: 0.5 });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitStatus('loading');
-
-    // Simulate form submission
-    try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      // Reset success message after 3 seconds
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    } catch {
-      setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus('idle'), 3000);
+  useEffect(() => {
+    if (isInView) {
+      setActiveSection('contact');
     }
-  };
-
-  const contactInfo = [
-    {
-      icon: FaPhone,
-      label: 'Telefone',
-      value: '+55 (15) 99670-6256',
-      link: 'tel:+5515996706256'
-    },
-    {
-      icon: FaEnvelope,
-      label: 'Email',
-      value: 'lucas.f.christen@outlook.com',
-      link: 'mailto:lucas.f.christen@outlook.com'
-    },
-    {
-      icon: FaLinkedin,
-      label: 'LinkedIn',
-      value: 'lucas-f-christen-69327a21b',
-      link: 'https://www.linkedin.com/in/lucas-f-christen-69327a21b/'
-    },
-    {
-      icon: FaGithub,
-      label: 'GitHub',
-      value: 'Lucas-Christen',
-      link: 'https://github.com/Lucas-Christen'
-    },
-    {
-      icon: FaMapMarkerAlt,
-      label: 'Localização',
-      value: 'Ponta Grossa, PR - Brasil',
-      link: '#'
-    }
-  ];
+  }, [isInView, setActiveSection]);
 
   return (
-    <section id="contact" className="section-padding bg-background-primary">
+    <section id="contact" ref={ref} className="section-padding bg-background-secondary">
       <div className="container-custom px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -79,206 +22,59 @@ const ContactSection: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
-            Vamos <span className="gradient-text">Conversar</span>
+            Entre em <span className="text-accent">Contato</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Interessado em projetos automotivos, telemetria ou desenvolvimento de sistemas de alta performance? 
-            Entre em contato para discutirmos possíveis colaborações.
+            Estou aberto a novas oportunidades e colaborações. Vamos construir algo incrível juntos.
           </p>
         </motion.div>
-
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            className="space-y-8"
+            transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div>
-              <h3 className="text-2xl font-bold text-text-primary mb-6">
-                Informações de Contato
-              </h3>
-              <p className="text-text-secondary mb-8">
-                Estou sempre aberto a novas oportunidades e colaborações. 
-                Especialmente interessado em projetos relacionados a sistemas automotivos, 
-                telemetria e desenvolvimento de soluções de alta performance.
-              </p>
-            </div>
-
+            <h3 className="text-2xl font-bold text-text-primary mb-4">Informações de Contato</h3>
             <div className="space-y-4">
-              {contactInfo.map((info, index) => (
-                <motion.a
-                  key={info.label}
-                  href={info.link}
-                  target={info.link.startsWith('http') ? '_blank' : undefined}
-                  rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ x: 10 }}
-                  className="flex items-center space-x-4 p-4 bg-background-secondary/50 backdrop-blur-sm border border-primary/20 rounded-lg hover:border-accent/30 transition-all duration-300 group"
-                >
-                  <div className="flex-shrink-0">
-                    <info.icon className="text-2xl text-accent group-hover:text-primary transition-colors duration-300" />
-                  </div>
-                  <div>
-                    <div className="text-text-primary font-medium">{info.label}</div>
-                    <div className="text-text-secondary group-hover:text-text-primary transition-colors duration-300">
-                      {info.value}
-                    </div>
-                  </div>
-                </motion.a>
-              ))}
+              <a href="mailto:lucas.f.christen@outlook.com" className="flex items-center text-text-secondary hover:text-accent transition-colors">
+                <FaEnvelope className="mr-3 text-accent" />
+                lucas.f.christen@outlook.com
+              </a>
+              <a href="https://www.linkedin.com/in/lucas-f-christen-69327a21b/" target="_blank" rel="noopener noreferrer" className="flex items-center text-text-secondary hover:text-accent transition-colors">
+                <FaLinkedin className="mr-3 text-accent" />
+                LinkedIn
+              </a>
+              <a href="https://github.com/Lucas-Christen" target="_blank" rel="noopener noreferrer" className="flex items-center text-text-secondary hover:text-accent transition-colors">
+                <FaGithub className="mr-3 text-accent" />
+                GitHub
+              </a>
             </div>
-
-            {/* Additional Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
-              className="bg-background-secondary/50 backdrop-blur-sm border border-primary/20 rounded-lg p-6"
-            >
-              <h4 className="text-lg font-semibold text-text-primary mb-3">
-                Disponibilidade
-              </h4>
-              <div className="space-y-2 text-text-secondary">
-                <div className="flex justify-between">
-                  <span>Projetos Freelance:</span>
-                  <span className="text-accent font-medium">Disponível</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Colaborações:</span>
-                  <span className="text-accent font-medium">Aberto</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Consultoria:</span>
-                  <span className="text-accent font-medium">Sob Consulta</span>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
-
-          {/* Contact Form */}
-          <motion.div
+          <motion.form
+            action="https://formspree.io/f/SEU_ENDPOINT_AQUI" // Lembre-se de substituir pelo seu endpoint
+            method="POST"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            className="bg-background-secondary/50 backdrop-blur-sm border border-primary/20 rounded-lg p-8"
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="space-y-4"
           >
-            <h3 className="text-2xl font-bold text-text-primary mb-6">
-              Envie uma Mensagem
-            </h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-text-primary font-medium mb-2">
-                    Nome
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-background-primary border border-primary/20 rounded-lg text-text-primary placeholder-text-secondary focus:border-accent focus:outline-none transition-colors duration-300"
-                    placeholder="Seu nome completo"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-text-primary font-medium mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-background-primary border border-primary/20 rounded-lg text-text-primary placeholder-text-secondary focus:border-accent focus:outline-none transition-colors duration-300"
-                    placeholder="seu@email.com"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-text-primary font-medium mb-2">
-                  Assunto
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-4 py-3 bg-background-primary border border-primary/20 rounded-lg text-text-primary placeholder-text-secondary focus:border-accent focus:outline-none transition-colors duration-300"
-                  placeholder="Sobre o que gostaria de conversar?"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-text-primary font-medium mb-2">
-                  Mensagem
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-background-primary border border-primary/20 rounded-lg text-text-primary placeholder-text-secondary focus:border-accent focus:outline-none transition-colors duration-300 resize-none"
-                  placeholder="Conte-me sobre seu projeto ou proposta..."
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                disabled={submitStatus === 'loading'}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full btn-primary flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {submitStatus === 'loading' && (
-                  <div className="w-5 h-5 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
-                )}
-                <span>
-                  {submitStatus === 'loading' ? 'Enviando...' : 
-                   submitStatus === 'success' ? 'Mensagem Enviada!' : 
-                   submitStatus === 'error' ? 'Erro ao Enviar' : 'Enviar Mensagem'}
-                </span>
-              </motion.button>
-
-              {submitStatus === 'success' && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-green-400 text-center"
-                >
-                  Obrigado! Sua mensagem foi enviada com sucesso.
-                </motion.div>
-              )}
-
-              {submitStatus === 'error' && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-red-400 text-center"
-                >
-                  Erro ao enviar mensagem. Tente novamente.
-                </motion.div>
-              )}
-            </form>
-          </motion.div>
+            <div>
+              <label htmlFor="name" className="sr-only">Nome</label>
+              <input type="text" name="name" id="name" placeholder="Seu Nome" required className="w-full bg-background-primary/50 border border-primary/20 rounded-lg p-3 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent" />
+            </div>
+            <div>
+              <label htmlFor="email" className="sr-only">Email</label>
+              <input type="email" name="email" id="email" placeholder="Seu Email" required className="w-full bg-background-primary/50 border border-primary/20 rounded-lg p-3 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent" />
+            </div>
+            <div>
+              <label htmlFor="message" className="sr-only">Mensagem</label>
+              <textarea name="message" id="message" rows={5} placeholder="Sua Mensagem" required className="w-full bg-background-primary/50 border border-primary/20 rounded-lg p-3 text-text-primary focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+            </div>
+            <button type="submit" className="btn-primary w-full">Enviar Mensagem</button>
+          </motion.form>
         </div>
       </div>
     </section>
   );
 };
-
 export default ContactSection;

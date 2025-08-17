@@ -1,11 +1,20 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useEffect } from 'react';
+import { motion, useInView } from 'framer-motion';
 import ProjectCard from '../ProjectCard';
-import { projects } from '../../data/projects'; // Certifique-se que o caminho está correto
+import { projects } from '../../data/projects';
 
-const ProjectsSection: React.FC = () => {
+const ProjectsSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ setActiveSection }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { amount: 0.2 }); // amount menor para seções longas
+
+  useEffect(() => {
+    if (isInView) {
+      setActiveSection('projects');
+    }
+  }, [isInView, setActiveSection]);
+
   return (
-    <section id="projects" className="section-padding bg-background-primary">
+    <section id="projects" ref={ref} className="section-padding bg-background-primary">
       <div className="container-custom px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -20,14 +29,11 @@ const ProjectsSection: React.FC = () => {
             Uma seleção de trabalhos que demonstram minha paixão por resolver problemas complexos com tecnologia e dados.
           </p>
         </motion.div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            // O componente ProjectCard agora recebe 'project' e 'index' como props
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,5 +56,4 @@ const ProjectsSection: React.FC = () => {
     </section>
   );
 };
-
 export default ProjectsSection;
