@@ -1,47 +1,33 @@
+// src/components/Footer.tsx
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    {
-      name: 'GitHub',
-      icon: FaGithub,
-      url: 'https://github.com/Lucas-Christen',
-      color: 'hover:text-gray-400'
-    },
-    {
-      name: 'LinkedIn',
-      icon: FaLinkedin,
-      url: 'https://www.linkedin.com/in/lucas-f-christen-69327a21b/',
-      color: 'hover:text-blue-400'
-    },
-    {
-      name: 'Email',
-      icon: FaEnvelope,
-      url: 'mailto:lucas.f.christen@outlook.com',
-      color: 'hover:text-red-400'
-    }
+    { name: 'GitHub', icon: FaGithub, url: 'https://github.com/Lucas-Christen', color: 'hover:text-gray-400' },
+    { name: 'LinkedIn', icon: FaLinkedin, url: 'https://www.linkedin.com/in/lucas-f-christen-69327a21b/', color: 'hover:text-blue-400' },
+    { name: 'Email', icon: FaEnvelope, url: 'mailto:lucas.f.christen@outlook.com', color: 'hover:text-red-400' }
   ];
 
   return (
     <footer className="bg-background-secondary border-t border-primary/20">
       <div className="container-custom px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          {/* Copyright */}
           <div className="text-center md:text-left">
             <p className="text-text-secondary">
-              © {currentYear} <span className="text-text-primary font-semibold">Lucas Fernandes Christen</span>. 
-              Todos os direitos reservados.
+              © {currentYear} <span className="text-text-primary font-semibold">Lucas Fernandes Christen</span>. {t('footer.copyright')}
             </p>
             <p className="text-text-secondary text-sm mt-1">
-              Desenvolvedor Full-Stack | Engenheiro de Dados | Especialista em Sistemas Automotivos
+              {t('footer.subtitle')}
             </p>
           </div>
 
-          {/* Social Links */}
           <div className="flex space-x-6">
             {socialLinks.map((social, index) => (
               <motion.a
@@ -63,7 +49,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Made with Love */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -71,18 +56,15 @@ const Footer: React.FC = () => {
           className="text-center mt-8 pt-6 border-t border-primary/10"
         >
           <p className="text-text-secondary text-sm flex items-center justify-center space-x-2">
-            <span>Feito com</span>
+            <span>{t('footer.madeWith')}</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
               <FaHeart className="text-primary" size={14} />
             </motion.div>
-            <span>e muito café</span>
+            <span>{t('footer.andCoffee')}</span>
             <span className="text-accent">☕</span>
-          </p>
-          <p className="text-text-secondary text-xs mt-2">
-            Tecnologias: React, TypeScript, Tailwind CSS, Framer Motion
           </p>
         </motion.div>
       </div>

@@ -10,6 +10,12 @@
     "title": "Lucas Fernandes Christen | Desarrollador Full-Stack & Ingeniero de Datos",
     "description": "Portafolio de Lucas Fernandes Christen, Desarrollador Full-Stack e Ingeniero de Datos especializado en sistemas automotrices de alto rendimiento."
   },
+    "footer": {
+    "copyright": "Todos los derechos reservados.",
+    "subtitle": "Desarrollador Full-Stack | Ingeniero de Datos | Especialista en Sistemas Automotrices",
+    "madeWith": "Hecho con",
+    "andCoffee": "y mucho café"
+  },
   "hero": {
     "statusBar": "Sistema Operativo: Lucas Christen v3.0",
     "title1": "Lucas Fernandes",

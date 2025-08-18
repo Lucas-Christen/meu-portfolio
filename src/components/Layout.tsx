@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ScrollToTop from './ui/ScrollToTop';
 
 // O Layout agora recebe 'activeSection' como prop
 const Layout: React.FC<{ children: React.ReactNode; activeSection: string }> = ({ children, activeSection }) => {
@@ -11,6 +12,7 @@ const Layout: React.FC<{ children: React.ReactNode; activeSection: string }> = (
       <main className="flex-grow">
         {children}
       </main>
+      <ScrollToTop />
       <Footer />
     </div>
   );

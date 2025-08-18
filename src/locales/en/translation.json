@@ -9,6 +9,12 @@
   "meta": {
     "title": "Lucas Fernandes Christen | Full-Stack Developer & Data Engineer",
     "description": "Portfolio of Lucas Fernandes Christen, a Full-Stack Developer and Data Engineer specializing in high-performance automotive systems."
+  },
+    "footer": {
+    "copyright": "All rights reserved.",
+    "subtitle": "Full-Stack Developer | Data Engineer | Automotive Systems Specialist",
+    "madeWith": "Made with",
+    "andCoffee": "and a lot of coffee"
   },  
   "hero": {
     "statusBar": "Operating System: Lucas Christen v3.0",
