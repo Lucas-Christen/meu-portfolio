@@ -65,6 +65,8 @@
   "resume": {
     "characterName": "Lucas Fernandes Christen",
     "characterClass": "Performance Engineer | Level 4",
+    "race": "Human (Variant: Problem Solver)",
+    "alignment": "Lawful Good",
     "attributes": {
       "title": "Core Attributes",
       "strength": { "name": "STRENGTH", "description": "Backend, Python, Node.js" },
@@ -76,10 +78,23 @@
     },
     "proficiencies": {
       "title": "Skills & Proficiencies",
-      "backend": { "title": "Backend Development" },
-      "data": { "title": "Data Analysis" },
-      "frontend": { "title": "Frontend & UI" },
-      "embedded": { "title": "Embedded Systems" }
+      "programming": { "title": "Programming & Data" },
+      "data": { "title": "Machine Learning & Data Science" },
+      "web": { "title": "Web Development" },
+      "management": { "title": "Management & Soft Skills" }
+    },
+    "equipment": {
+        "title": "Equipment (Inventory)",
+        "weapon": { "name": "Primary Weapon", "description": "Visual Studio Code" },
+        "shield": { "name": "Shield", "description": "Git & GitHub" },
+        "amulet": { "name": "Amulet", "description": "Docker" },
+        "potion": { "name": "Potions", "description": "Coffee & Tech Docs" }
+    },
+    "languages": {
+        "title": "Languages",
+        "fluent": "Fluent",
+        "intermediate": "Intermediate",
+        "beginner": "Beginner"
     },
     "timelineTitle": "Journey & Feats",
     "timeline": [
@@ -88,7 +103,11 @@
       { "type": "work", "date": "2024.1 - Present", "title": "Full Stack Developer", "subtitle": "UTForce E-Racing", "description": "Creation of the graphical interface for real-time data telemetry, using Python and HTML for visualization and analysis via LoRa network." },
       { "type": "work", "date": "2022.2 - 2025.1", "title": "President & Team Leader", "subtitle": "UTForce E-Racing FSAE", "description": "Led 42 members, raising the team from 25th to 13th in the national ranking. Developed the battery and telemetry system." },
       { "type": "education", "date": "2022.2 - 2025", "title": "Electrical Engineering (Incomplete)", "subtitle": "UTFPR, Ponta Grossa", "description": "Course focused on electrical systems that served as a foundation for specializing in automotive systems." }
-    ]
+    ],
+    "backstory": {
+        "title": "Character Backstory",
+        "content": "Hailing from the forges of electrical engineering and trained on the racetracks of Formula SAE, Lucas Christen discovered his true calling was to decipher the secrets hidden within data..."
+    }
   },
 "projects": {
     "title": "Projects in the <accent>Spotlight</accent>",

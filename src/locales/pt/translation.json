@@ -37,7 +37,7 @@
     "stat2": "Posições Avançadas no Ranking",
     "stat3": "Idiomas para Comunicação Global"
   },
-"expertise": {
+  "expertise": {
     "title": "Áreas de <accent>Expertise</accent>",
     "titleAccent": "Expertise",
     "subtitle": "Minha abordagem para construir soluções inovadoras, combinando desenvolvimento de software, análise de dados e engenharia de sistemas.",
@@ -65,6 +65,8 @@
   "resume": {
     "characterName": "Lucas Fernandes Christen",
     "characterClass": "Engenheiro de Performance | Nível 4",
+    "race": "Humano (Variante: Solucionador de Problemas)",
+    "alignment": "Leal e Bom",
     "attributes": {
       "title": "Atributos Principais",
       "strength": { "name": "FORÇA", "description": "Backend, Python, Node.js" },
@@ -76,10 +78,23 @@
     },
     "proficiencies": {
       "title": "Perícias e Proficiências",
-      "backend": { "title": "Desenvolvimento Backend" },
-      "data": { "title": "Análise de Dados" },
-      "frontend": { "title": "Frontend & UI" },
-      "embedded": { "title": "Sistemas Embarcados" }
+      "programming": { "title": "Programação e Dados" },
+      "data": { "title": "Machine Learning & Data Science" },
+      "web": { "title": "Desenvolvimento Web" },
+      "management": { "title": "Gestão & Soft Skills" }
+    },
+    "equipment": {
+      "title": "Equipamentos (Inventário)",
+      "weapon": { "name": "Arma Principal", "description": "Visual Studio Code" },
+      "shield": { "name": "Escudo", "description": "Git & GitHub" },
+      "amulet": { "name": "Amuleto", "description": "Docker" },
+      "potion": { "name": "Poções", "description": "Café e Documentação Técnica" }
+    },
+    "languages": {
+        "title": "Idiomas",
+        "fluent": "Fluente",
+        "intermediate": "Intermediário",
+        "beginner": "Iniciante"
     },
     "timelineTitle": "Jornada e Conquistas",
     "timeline": [
@@ -88,9 +103,13 @@
       { "type": "work", "date": "2024.1 - Presente", "title": "Desenvolvedor Full Stack", "subtitle": "UTForce E-Racing", "description": "Criação da interface gráfica para telemetria de dados em tempo real, utilizando Python e HTML para visualização e análise via rede LoRa." },
       { "type": "work", "date": "2022.2 - 2025.1", "title": "Presidente e Líder de Equipe", "subtitle": "UTForce E-Racing FSAE", "description": "Liderei 42 membros, elevando a equipe da 25ª para a 13ª posição no ranking nacional. Desenvolvi o sistema de bateria e telemetria." },
       { "type": "education", "date": "2022.2 - 2025", "title": "Engenharia Elétrica (Incompleto)", "subtitle": "UTFPR, Ponta Grossa", "description": "Curso focado em sistemas elétricos que serviu de base para a especialização em sistemas automotivos." }
-    ]
+    ],
+    "backstory": {
+        "title": "História do Personagem",
+        "content": "Vindo das forjas da engenharia elétrica e treinado nas pistas de corrida da Fórmula SAE, Lucas Christen descobriu que sua verdadeira vocação era decifrar os segredos escondidos nos dados..."
+    }
   },
-"projects": {
+  "projects": {
     "title": "Projetos em <accent>Destaque</accent>",
     "subtitle": "Uma seleção de trabalhos que demonstram minha paixão por resolver problemas complexos com tecnologia e dados.",
     "buttonMore": "Ver Mais no GitHub",
@@ -189,4 +208,5 @@
       "avgResponse": "Tempo médio de resposta",
       "responseRate": "Taxa de resposta"
     }
-  }}
+  }
+}

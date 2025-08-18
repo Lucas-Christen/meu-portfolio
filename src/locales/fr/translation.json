@@ -65,6 +65,8 @@
   "resume": {
     "characterName": "Lucas Fernandes Christen",
     "characterClass": "Ingénieur de Performance | Niveau 4",
+    "race": "Humain (Variante : Résolveur de Problèmes)",
+    "alignment": "Loyal Bon",
     "attributes": {
       "title": "Attributs Principaux",
       "strength": { "name": "FORCE", "description": "Backend, Python, Node.js" },
@@ -81,6 +83,13 @@
       "frontend": { "title": "Frontend & UI" },
       "embedded": { "title": "Systèmes Embarqués" }
     },
+    "equipment": {
+        "title": "Équipement (Inventaire)",
+        "weapon": { "name": "Arme Principale", "description": "Visual Studio Code" },
+        "shield": { "name": "Bouclier", "description": "Git & GitHub" },
+        "amulet": { "name": "Amulette", "description": "Docker" },
+        "potion": { "name": "Potions", "description": "Café et Documentation Technique" }
+    },
     "timelineTitle": "Parcours et Hauts Faits",
     "timeline": [
       { "type": "work", "date": "2025.1", "title": "Développeur Full Stack", "subtitle": "Porsche Cup Brasil", "description": "Développement d'applications spécialisées pour l'optimisation des configurations de voitures, en utilisant les données pour l'analyse des performances." },
@@ -88,7 +97,11 @@
       { "type": "work", "date": "2024.1 - Présent", "title": "Développeur Full Stack", "subtitle": "UTForce E-Racing", "description": "Création de l'interface graphique pour la télémétrie de données en temps réel, en utilisant Python et HTML pour la visualisation et l'analyse via le réseau LoRa." },
       { "type": "work", "date": "2022.2 - 2025.1", "title": "Président et Chef d'Équipe", "subtitle": "UTForce E-Racing FSAE", "description": "J'ai dirigé 42 membres, faisant passer l'équipe de la 25ème à la 13ème place du classement national. J'ai développé le système de batterie et de télémétrie." },
       { "type": "education", "date": "2022.2 - 2025", "title": "Génie Électrique (Incomplet)", "subtitle": "UTFPR, Ponta Grossa", "description": "Cours axé sur les systèmes électriques qui a servi de base à la spécialisation dans les systèmes automobiles." }
-    ]
+    ],
+    "backstory": {
+        "title": "Histoire du Personnage",
+        "content": "Issu des forges de l'ingénierie électrique et formé sur les pistes de course de la Formule SAE, Lucas Christen a découvert que sa véritable vocation était de déchiffrer les secrets cachés dans les données..."
+    }
   },
 "projects": {
     "title": "Projets en <accent>Vedette</accent>",
