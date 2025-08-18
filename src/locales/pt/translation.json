@@ -51,11 +51,42 @@
       "leadership6": "Mandarim (Iniciante)"
     }
   },
-  "projects": {
-    "title": "Projetos",
-    "titleAccent": "em Destaque",
+"projects": {
+    "title": "Projetos em <accent>Destaque</accent>",
     "subtitle": "Uma seleção de trabalhos que demonstram minha paixão por resolver problemas complexos com tecnologia e dados.",
-    "buttonMore": "Ver Mais no GitHub"
+    "buttonMore": "Ver Mais no GitHub",
+    "items": {
+      "telemetry": {
+        "title": "Sistema de Telemetria IoT para Fórmula SAE",
+        "description": "Sistema IoT completo para telemetria em tempo real, utilizando ESP32 e LoRa no veículo e uma estação base com Raspberry Pi e Flask API para processamento e armazenamento de dados em MySQL. A interface gráfica multiplataforma foi desenvolvida em Python com PySide6 (Qt) para visualização e análise de performance.",
+        "tags": ["IoT", "ESP32", "LoRa", "Raspberry Pi", "Python", "Flask", "PySide6"]
+      },
+      "captain": {
+        "title": "Capitão e Engenheiro de Sistemas (UTForce E-Racing)",
+        "description": "Liderei a construção do protótipo de carro elétrico, sendo responsável pelo sistema de alta tensão, diagnóstico e reparo do BMS (Battery Management System), e pela montagem e integração geral. Garanti um patrocínio estratégico para componentes essenciais, culminando na entrega de um veículo totalmente funcional.",
+        "tags": ["Liderança de Equipe", "Gestão de Projetos", "Sistemas Elétricos", "Alta Tensão", "BMS", "Diagnóstico de Falhas"]
+      },
+      "tires": {
+        "title": "Sistema de Gerenciamento de Pneus (Motorsport)",
+        "description": "Aplicação desktop (PySide6) para gerenciamento de pneus e análise de setup em motorsport. O sistema calcula correções de pressão, exporta relatórios e visualiza a distribuição de rigidez do carro com heatmaps, auxiliando na tomada de decisão estratégica.",
+        "tags": ["PySide6", "Python", "Motorsport", "Análise de Dados", "Desktop App"]
+      },
+      "commandCenter": {
+        "title": "Central de Comando Pessoal",
+        "description": "Aplicativo de produtividade desktop multiplataforma (Win/Mac/Linux) com arquitetura modular, construído com Electron.js, Node.js e React. Inclui módulos de finanças, tarefas, metas com gamificação e saúde, com gráficos dinâmicos e notificações nativas.",
+        "tags": ["Electron.js", "Node.js", "React", "Desktop App", "JavaScript"]
+      },
+      "pokemon": {
+        "title": "Sistema de Análise de Dados Pokémon",
+        "description": "Aplicação Full Stack (Ionic/Angular) que transforma uma Pokédex em uma plataforma de análise de dados. Coleta e processa métricas de 1000+ Pokémon, incluindo estatísticas, metadados e comportamento do usuário, utilizando webhooks customizados, cache LRU e streaming de dados com RxJS para otimização de UX em tempo real.",
+        "tags": ["Ionic", "Angular", "TypeScript", "Análise de Dados", "RxJS", "Full Stack"]
+      },
+      "webTelemetry": {
+        "title": "Dashboard de Telemetria Web",
+        "description": "Aplicação web para análise e visualização de dados de telemetria em tempo real, com backend em Python/Flask e frontend interativo construído com HTML, CSS, JavaScript e Chart.js para gráficos dinâmicos.",
+        "tags": ["Flask", "Python", "JavaScript", "Chart.js", "HTML/CSS"]
+      }
+    }
   },
   "contact": {
     "statusBadge": "Disponível para novos projetos",
