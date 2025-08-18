@@ -3,14 +3,17 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { FaBars, FaTimes } from 'react-icons/fa'; // Ícones para o menu
-import MobileMenu from './MobileMenu'; // Importa o novo componente
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { Link, useLocation } from 'react-router-dom';
+import MobileMenu from './MobileMenu';
 
 const Navbar: React.FC<{ activeSection: string }> = ({ activeSection }) => {
   const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para controlar o menu mobile
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
+  // LÓGICA DE SCROLL RESTAURADA
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -19,7 +22,7 @@ const Navbar: React.FC<{ activeSection: string }> = ({ activeSection }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Previne o scroll da página quando o menu mobile está aberto
+  // LÓGICA DE BLOQUEIO DE SCROLL RESTAURADA
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -29,11 +32,12 @@ const Navbar: React.FC<{ activeSection: string }> = ({ activeSection }) => {
   }, [isMenuOpen]);
 
   const navLinks = [
-    { href: '#home', label: t('navbar.home') },
-    { href: '#about', label: t('navbar.about') },
-    { href: '#skills', label: t('navbar.expertise') },
-    { href: '#projects', label: t('navbar.projects') },
-    { href: '#contact', label: t('navbar.contact') },
+    { href: '/#home', label: t('navbar.home'), isPageLink: false },
+    { href: '/#about', label: t('navbar.about'), isPageLink: false },
+    { href: '/#skills', label: t('navbar.expertise'), isPageLink: false },
+    { href: '/#projects', label: t('navbar.projects'), isPageLink: false },
+    { href: '/curriculo', label: t('navbar.resume'), isPageLink: true },
+    { href: '/#contact', label: t('navbar.contact'), isPageLink: false },
   ];
 
   const languages = ['pt', 'en', 'es', 'fr'];
@@ -53,26 +57,45 @@ const Navbar: React.FC<{ activeSection: string }> = ({ activeSection }) => {
         }`}
       >
         <div className="container-custom px-4 mx-auto flex justify-between items-center py-4">
-          <a href="#home" className="text-2xl font-bold text-accent font-title">
+          <Link to="/" className="text-2xl font-bold text-accent font-title">
             LC
-          </a>
+          </Link>
 
           {/* Menu para Desktop (escondido em telas pequenas) */}
           <div className="hidden md:flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`font-body font-medium transition-colors duration-300 ${
-                  activeSection === link.href.substring(1)
-                    ? 'text-accent'
-                    : 'text-text-secondary hover:text-accent'
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              if (link.isPageLink) {
+                return (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className={`font-body font-medium transition-colors duration-300 ${
+                      location.pathname === link.href
+                        ? 'text-accent'
+                        : 'text-text-secondary hover:text-accent'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              }
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`font-body font-medium transition-colors duration-300 ${
+                    activeSection === link.href.substring(2) && location.pathname === '/'
+                      ? 'text-accent'
+                      : 'text-text-secondary hover:text-accent'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
+            
             <div className="w-px h-6 bg-primary/20 mx-2"></div>
+
             <div className="flex items-center space-x-4">
               {languages.map((lang) => (
                 <button

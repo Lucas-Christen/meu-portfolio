@@ -4,6 +4,7 @@
     "about": "À propos",
     "expertise": "Expertise",
     "projects": "Projets",
+    "resume": "Curricullum",
     "contact": "Contact"
   },
   "meta": {
@@ -60,6 +61,34 @@
       "leadership5": "Espagnol (B1)",
       "leadership6": "Mandarin (Débutant)"
     }
+  },
+  "resume": {
+    "characterName": "Lucas Fernandes Christen",
+    "characterClass": "Ingénieur de Performance | Niveau 4",
+    "attributes": {
+      "title": "Attributs Principaux",
+      "strength": { "name": "FORCE", "description": "Backend, Python, Node.js" },
+      "dexterity": { "name": "DEXTÉRITÉ", "description": "Frontend, React, Animations" },
+      "constitution": { "name": "CONSTITUTION", "description": "DevOps, BD, Scalabilité" },
+      "intelligence": { "name": "INTELLIGENCE", "description": "Algorithmes, Analyse de Données" },
+      "wisdom": { "name": "SAGESSE", "description": "Architecture, Débogage" },
+      "charisma": { "name": "CHARISME", "description": "Leadership, Communication" }
+    },
+    "proficiencies": {
+      "title": "Compétences et Maîtrises",
+      "backend": { "title": "Développement Backend" },
+      "data": { "title": "Analyse de Données" },
+      "frontend": { "title": "Frontend & UI" },
+      "embedded": { "title": "Systèmes Embarqués" }
+    },
+    "timelineTitle": "Parcours et Hauts Faits",
+    "timeline": [
+      { "type": "work", "date": "2025.1", "title": "Développeur Full Stack", "subtitle": "Porsche Cup Brasil", "description": "Développement d'applications spécialisées pour l'optimisation des configurations de voitures, en utilisant les données pour l'analyse des performances." },
+      { "type": "education", "date": "2025 - Présent", "title": "Génie Logiciel", "subtitle": "Unicesumar", "description": "Diplôme axé sur les fondements et les pratiques avancées du génie logiciel." },
+      { "type": "work", "date": "2024.1 - Présent", "title": "Développeur Full Stack", "subtitle": "UTForce E-Racing", "description": "Création de l'interface graphique pour la télémétrie de données en temps réel, en utilisant Python et HTML pour la visualisation et l'analyse via le réseau LoRa." },
+      { "type": "work", "date": "2022.2 - 2025.1", "title": "Président et Chef d'Équipe", "subtitle": "UTForce E-Racing FSAE", "description": "J'ai dirigé 42 membres, faisant passer l'équipe de la 25ème à la 13ème place du classement national. J'ai développé le système de batterie et de télémétrie." },
+      { "type": "education", "date": "2022.2 - 2025", "title": "Génie Électrique (Incomplet)", "subtitle": "UTFPR, Ponta Grossa", "description": "Cours axé sur les systèmes électriques qui a servi de base à la spécialisation dans les systèmes automobiles." }
+    ]
   },
 "projects": {
     "title": "Projets en <accent>Vedette</accent>",

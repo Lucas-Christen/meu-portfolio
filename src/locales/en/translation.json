@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About",
     "expertise": "Expertise",
+    "resume": "Curricullum",
     "projects": "Projects",
     "contact": "Contact"
   },
@@ -60,6 +61,34 @@
       "leadership5": "Spanish (B1)",
       "leadership6": "Mandarin (Beginner)"
     }
+  },
+  "resume": {
+    "characterName": "Lucas Fernandes Christen",
+    "characterClass": "Performance Engineer | Level 4",
+    "attributes": {
+      "title": "Core Attributes",
+      "strength": { "name": "STRENGTH", "description": "Backend, Python, Node.js" },
+      "dexterity": { "name": "DEXTERITY", "description": "Frontend, React, Animations" },
+      "constitution": { "name": "CONSTITUTION", "description": "DevOps, DBs, Scalability" },
+      "intelligence": { "name": "INTELLIGENCE", "description": "Algorithms, Data Analysis" },
+      "wisdom": { "name": "WISDOM", "description": "Architecture, Debugging" },
+      "charisma": { "name": "CHARISMA", "description": "Leadership, Communication" }
+    },
+    "proficiencies": {
+      "title": "Skills & Proficiencies",
+      "backend": { "title": "Backend Development" },
+      "data": { "title": "Data Analysis" },
+      "frontend": { "title": "Frontend & UI" },
+      "embedded": { "title": "Embedded Systems" }
+    },
+    "timelineTitle": "Journey & Feats",
+    "timeline": [
+      { "type": "work", "date": "2025.1", "title": "Full Stack Developer", "subtitle": "Porsche Cup Brasil", "description": "Development of specialized applications for car setup optimization, using data for performance analysis." },
+      { "type": "education", "date": "2025 - Present", "title": "Software Engineering", "subtitle": "Unicesumar", "description": "Degree focused on the fundamentals and advanced practices of software engineering." },
+      { "type": "work", "date": "2024.1 - Present", "title": "Full Stack Developer", "subtitle": "UTForce E-Racing", "description": "Creation of the graphical interface for real-time data telemetry, using Python and HTML for visualization and analysis via LoRa network." },
+      { "type": "work", "date": "2022.2 - 2025.1", "title": "President & Team Leader", "subtitle": "UTForce E-Racing FSAE", "description": "Led 42 members, raising the team from 25th to 13th in the national ranking. Developed the battery and telemetry system." },
+      { "type": "education", "date": "2022.2 - 2025", "title": "Electrical Engineering (Incomplete)", "subtitle": "UTFPR, Ponta Grossa", "description": "Course focused on electrical systems that served as a foundation for specializing in automotive systems." }
+    ]
   },
 "projects": {
     "title": "Projects in the <accent>Spotlight</accent>",
