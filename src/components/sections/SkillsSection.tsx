@@ -6,7 +6,6 @@ import { getExpertiseData, ExpertiseItem } from '../../data/expertise';
 import { useTranslation, Trans } from 'react-i18next';
 
 const SkillsSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ setActiveSection }) => {
-  // 1. Pegamos a instância 'i18n' para monitorar a linguagem
   const { t, i18n } = useTranslation(); 
   const expertiseData = getExpertiseData(t);
 
@@ -20,18 +19,12 @@ const SkillsSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ s
     }
   }, [isInView, setActiveSection]);
   
-  // ==================================================================
-  // 2. A CORREÇÃO ESTÁ AQUI: Este useEffect sincroniza o estado
-  // ==================================================================
   useEffect(() => {
-    // Encontra a aba correspondente na lista de dados recém-traduzida
     const updatedTab = expertiseData.find(tab => tab.id === selectedTab.id);
     if (updatedTab) {
-      // Atualiza o estado com a versão traduzida da aba que já estava selecionada
       setSelectedTab(updatedTab);
     }
-  }, [i18n.language]); // A mágica: Este código só roda quando o idioma muda
-  // ==================================================================
+  }, [i18n.language]);
 
   const contentRef = useRef<HTMLDivElement>(null);
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -52,25 +45,24 @@ const SkillsSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ s
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
+          <h2 className="titulo-secao mb-4">
             <Trans
               i18nKey="expertise.title"
-              components={{
-                accent: <span className="text-accent" />,
-              }}
+              components={{ accent: <span className="text-accent" /> }}
             />
           </h2>
-          <p className="text-text-secondary text-lg max-w-3xl mx-auto">
+          <p className="subtitulo-secao">
             {t('expertise.subtitle')}
           </p>
         </motion.div>
         
         <div className="flex flex-col lg:flex-row gap-8 min-h-[450px]">
-          <div className="flex lg:flex-col gap-2">
+          {/* CORREÇÃO: Adicionado flex-wrap para que os botões quebrem a linha em telas pequenas */}
+          <div className="flex flex-row lg:flex-col gap-2 flex-wrap justify-center lg:justify-start">
             {expertiseData.map((item: ExpertiseItem) => (
               <button
                 key={item.id}
-                className={`relative w-full text-left p-4 rounded-lg transition-colors duration-300 ${
+                className={`relative text-left p-4 rounded-lg transition-colors duration-300 ${
                   selectedTab.id === item.id ? 'bg-background-primary/80' : 'hover:bg-background-primary/50'
                 }`}
                 onClick={() => setSelectedTab(item)}
@@ -98,9 +90,7 @@ const SkillsSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ s
           >
             <div 
               className="pointer-events-none absolute -inset-px rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style={{
-                background: 'radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(220, 0, 0, 0.1), transparent 40%)',
-              }}
+              style={{ background: 'radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(220, 0, 0, 0.1), transparent 40%)' }}
             />
             <AnimatePresence mode="wait">
               <motion.div
@@ -114,8 +104,8 @@ const SkillsSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ s
                 {selectedTab && (
                   <>
                     <div>
-                      <h3 className="text-4xl font-bold text-text-primary mb-4">{selectedTab.title}</h3>
-                      <p className="text-text-secondary text-lg leading-relaxed mb-8">{selectedTab.description}</p>
+                      <h3 className="text-3xl font-bold text-text-primary mb-4">{selectedTab.title}</h3>
+                      <p className="texto-corpo mb-8">{selectedTab.description}</p>
                     </div>
                     <div>
                       <h4 className="text-md font-semibold text-text-secondary mb-4">{t('expertise.techLabel')}</h4>

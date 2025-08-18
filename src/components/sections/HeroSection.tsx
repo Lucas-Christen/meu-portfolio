@@ -23,18 +23,12 @@ const HeroSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ set
 
   return (
     <section id="home" ref={ref} className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background-primary">
-      {/* --- Efeitos de fundo --- */}
       <motion.div 
         className="absolute inset-0 z-0"
-        style={{
-          background: 'radial-gradient(circle at 50% 50%, #1A1A1A 0%, #0A0A0A 70%)'
-        }}
+        style={{ background: 'radial-gradient(circle at 50% 50%, #1A1A1A 0%, #0A0A0A 70%)' }}
       />
-      {/* --- Conteúdo Principal --- */}
       <div className="container-custom px-4 relative z-10">
         <div className="text-center">
-          
-          {/* --- Status Bar --- */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -45,45 +39,34 @@ const HeroSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ set
             <span className="text-text-secondary text-sm font-mono">{t('hero.statusBar')}</span>
           </motion.div>
 
-          {/* --- Título Principal --- */}
+          {/* Título com tamanhos de fonte responsivos específicos */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            // ATUALIZADO AQUI: Usando a classe de componente
-            className="titulo-secao mb-6 text-5xl md:text-8xl"
+            className="titulo-secao mb-6 text-4xl sm:text-6xl md:text-7xl"
           >
             <span className="text-accent">{t('hero.title1')}</span>
             <br />
             <span className="text-accent">{t('hero.title2')}</span>
           </motion.h1>
           
-          {/* --- Subtítulo --- */}
+          {/* Subtítulo usando a classe de componente responsiva */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            // ATUALIZADO AQUI: Usando a classe de componente
-            className="subtitulo-secao mb-12 text-5xl md:text-2xl"
+            className="subtitulo-secao mb-12"
           >
-            {/* O <span> interno é para manter o negrito específico, o que é ótimo */}
             <span className="font-semibold text-text-primary">{t('hero.subtitle')}</span>
           </motion.p>
           
-          {/* --- Cards de Estatísticas --- */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {stats.map((stat, index) => (
-              <StatCard
-                key={index}
-                index={index}
-                icon={stat.icon}
-                value={stat.value}
-                label={stat.label}
-              />
+              <StatCard key={index} index={index} icon={stat.icon} value={stat.value} label={stat.label} />
             ))}
           </div>
           
-          {/* --- Botões de Ação --- */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -102,7 +85,6 @@ const HeroSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ set
         </div>
       </div>
       
-      {/* --- Indicador de Scroll --- */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

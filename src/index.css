@@ -1,51 +1,47 @@
 /* src/index.css */
 
-/* 1. Importa as fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* 2. Inclui as bases do Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 3. Camada Base: Define os estilos padrão para todo o site */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    /* Define a fonte 'body' (Montserrat) e as cores padrão */
     @apply bg-background-primary text-text-primary font-body;
     margin: 0;
     min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    /* Define a fonte 'title' (DM Serif Text) para todos os títulos */
     @apply font-title;
   }
 }
 
-/* 4. Camada de Componentes: Sua "aba dedicada" para estilos reutilizáveis */
 @layer components {
   /* ============================================= */
-  /* Componentes de Tipografia                     */
+  /* Componentes de Tipografia (AGORA RESPONSIVOS) */
   /* ============================================= */
   .titulo-secao {
-    @apply font-title text-4xl font-bold text-text-primary md:text-5xl;
+    /* Começa menor (text-3xl) e cresce com a tela (sm, md) */
+    @apply font-title text-3xl font-bold text-text-primary sm:text-4xl md:text-5xl;
   }
   
   .subtitulo-secao {
-    @apply font-body text-lg text-text-secondary max-w-3xl mx-auto;
+    /* Começa com o tamanho base e cresce em telas pequenas (sm) */
+    @apply font-body text-base text-text-secondary max-w-3xl mx-auto sm:text-lg;
   }
   
   .texto-corpo {
-    @apply font-body text-lg leading-relaxed text-text-secondary;
+    @apply font-body text-base leading-relaxed text-text-secondary sm:text-lg;
   }
 
   /* ============================================= */
-  /* Componentes de Botão                          */
+  /* Componentes de Botão (Sem alterações)       */
   /* ============================================= */
   .btn-primary {
     @apply px-6 py-3 border-2 border-accent text-accent font-medium rounded-lg 
@@ -60,14 +56,14 @@
   }
   
   /* ============================================= */
-  /* Componentes de Layout e Efeitos               */
+  /* Componentes de Layout (CORREÇÃO CRÍTICA)      */
   /* ============================================= */
   .section-padding {
     @apply py-20 px-4;
   }
   
   .container-custom {
-    /* CORREÇÃO CRÍTICA PARA MOBILE: Adiciona espaçamento lateral */
+    /* Adiciona padding lateral responsivo para evitar que o conteúdo cole nas bordas */
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
@@ -77,5 +73,48 @@
   
   .card-hover {
     @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-accent/20;
+  }
+}
+@layer utilities {
+  /* ============================================= */
+  /* Variáveis de Cores (AGORA RESPONSIVAS)       */
+  /* ============================================= */
+  :root {
+    --background-primary: #f8f9fa;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --accent: #007bff;
+    --primary: #6610f2;
+  }
+
+  /* ============================================= */
+  /* Responsividade para Tipografia               */
+  /* ============================================= */
+  @media (min-width: 640px) {
+    .titulo-secao {
+      @apply text-4xl;
+    }
+    
+    .subtitulo-secao {
+      @apply text-lg;
+    }
+    
+    .texto-corpo {
+      @apply text-lg;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .titulo-secao {
+      @apply text-5xl;
+    }
+    
+    .subtitulo-secao {
+      @apply text-xl;
+    }
+    
+    .texto-corpo {
+      @apply text-xl;
+    }
   }
 }
