@@ -37,7 +37,7 @@ const ContactSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ 
 
     const json = JSON.stringify({
       ...formData,
-      access_key: "SUA_CHAVE_DE_ACESSO_AQUI",
+      access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
       subject: `Nova mensagem de ${formData.name} do seu Portfólio`,
     });
 

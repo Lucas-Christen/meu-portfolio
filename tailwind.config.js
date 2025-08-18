@@ -7,7 +7,7 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
-      // SUAS CORES ORIGINAIS - MANTIDAS
+      // Seu esquema de cores original, que está perfeito.
       colors: {
         primary: {
           DEFAULT: '#FFD700', // Ferrari Yellow
@@ -20,7 +20,7 @@ export default {
           dark: '#B30000',
         },
         text: {
-          primary: '#EEEEEE', // Mudei para #EEEEEE para bater com o seu exemplo
+          primary: '#EEEEEE',
           secondary: '#E5E5E5',
           accent: '#FFD700', 
         },
@@ -30,13 +30,13 @@ export default {
           accent: '#DC0000',
         },
       },
-      // FONTES ATUALIZADAS PARA A NOVA MANEIRA
+      // Configuração de fontes semânticas para fácil reutilização.
       fontFamily: {
-        body: ['Montserrat', 'system-ui', 'sans-serif'], // Para usar: font-body
-        title: ['DM Serif Text', 'serif'],             // Para usar: font-title
-        mono: ['Fira Code', 'monospace'],                 // Para usar: font-mono
+        body: ['Montserrat', 'system-ui', 'sans-serif'], // Classe: font-body
+        title: ['DM Serif Text', 'serif'],             // Classe: font-title
+        mono: ['Fira Code', 'monospace'],                 // Classe: font-mono
       },
-      // SUAS ANIMAÇÕES ORIGINAIS - MANTIDAS
+      // Suas animações.
       animation: {
         'aurora': 'aurora 60s linear infinite',
         'gradient-text': 'gradient-text 5s ease infinite',

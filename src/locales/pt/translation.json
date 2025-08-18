@@ -6,6 +6,10 @@
     "projects": "Projetos",
     "contact": "Contato"
   },
+  "meta": {
+    "title": "Lucas Fernandes Christen | Desenvolvedor Full-Stack & Engenheiro de Dados",
+    "description": "Portfólio de Lucas Fernandes Christen, Desenvolvedor Full-Stack e Engenheiro de Dados especializado em sistemas automotivos de alta performance."
+  },
   "hero": {
     "statusBar": "Sistema Operacional: Lucas Christen v3.0",
     "title1": "Lucas Fernandes",
