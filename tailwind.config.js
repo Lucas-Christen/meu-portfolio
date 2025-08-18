@@ -7,6 +7,7 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      // SUAS CORES ORIGINAIS - MANTIDAS
       colors: {
         primary: {
           DEFAULT: '#FFD700', // Ferrari Yellow
@@ -19,7 +20,7 @@ export default {
           dark: '#B30000',
         },
         text: {
-          primary: '#FFFFFF',
+          primary: '#EEEEEE', // Mudei para #EEEEEE para bater com o seu exemplo
           secondary: '#E5E5E5',
           accent: '#FFD700', 
         },
@@ -29,20 +30,20 @@ export default {
           accent: '#DC0000',
         },
       },
+      // FONTES ATUALIZADAS PARA A NOVA MANEIRA
       fontFamily: {
-        // Fonte trocada para 'Sora' para um visual mais premium e moderno
-        sans: ['Sora', 'system-ui', 'sans-serif'],
-        mono: ['Fira Code', 'monospace'],
+        body: ['Montserrat', 'system-ui', 'sans-serif'], // Para usar: font-body
+        title: ['DM Serif Text', 'serif'],             // Para usar: font-title
+        mono: ['Fira Code', 'monospace'],                 // Para usar: font-mono
       },
+      // SUAS ANIMAÇÕES ORIGINAIS - MANTIDAS
       animation: {
-        // Novas animações adicionadas
         'aurora': 'aurora 60s linear infinite',
         'gradient-text': 'gradient-text 5s ease infinite',
         'slide-in': 'slideIn 0.8s ease-out',
         'pulse-slow': 'pulse 3s infinite',
       },
       keyframes: {
-        // Keyframes para as novas animações
         aurora: {
           from: { backgroundPosition: '0% 50%' },
           to: { backgroundPosition: '200% 50%' },

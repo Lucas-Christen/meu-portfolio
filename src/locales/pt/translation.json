@@ -19,23 +19,36 @@
   },
   "about": {
     "title": "A Interseção entre a Pista e o Código",
-    "p1": "Minha carreira é definida por uma busca incansável por performance. Aprendi no automobilismo que a vitória está nos detalhes, nos dados e na capacidade de inovar sob pressão. Hoje, aplico essa mesma mentalidade para construir software.",
-    "p2": "Como Desenvolvedor Full-Stack e Engenheiro de Dados, minha missão é criar as ferramentas que transformam dados complexos em vantagem competitiva. Eu não apenas analiso os dados — eu construo os sistemas de ponta a ponta que os coletam, processam e revelam a performance oculta que leva ao sucesso.",
+    "p1": "Minha carreira é definida por uma busca incansável por <1>performance</1>. Aprendi no automobilismo que a vitória está nos detalhes, nos dados e na capacidade de inovar sob pressão. Hoje, aplico essa mesma mentalidade para construir software.",
+    "p2": "Como Desenvolvedor Full-Stack e Engenheiro de Dados, minha missão é criar as ferramentas que transformam <1>dados complexos em vantagem competitiva</1>. Eu não apenas analiso os dados — eu construo os sistemas de ponta a ponta que os coletam, processam e revelam a performance oculta que leva ao sucesso.",
     "cardTitle": "Minha Abordagem em Números",
     "stat1": "Membros Liderados no Projeto FSAE",
     "stat2": "Posições Avançadas no Ranking",
     "stat3": "Idiomas para Comunicação Global"
   },
-  "expertise": {
-    "title": "Áreas de",
+"expertise": {
+    "title": "Áreas de <accent>Expertise</accent>",
     "titleAccent": "Expertise",
     "subtitle": "Minha abordagem para construir soluções inovadoras, combinando desenvolvimento de software, análise de dados e engenharia de sistemas.",
     "techLabel": "Tecnologias principais:",
     "tabs": {
+      "fullstack_title": "Desenvolvimento Full-Stack",
       "fullstack_desc": "Arquiteto e desenvolvo aplicações de ponta a ponta, desde APIs robustas em Node.js e Python até interfaces reativas com React. Minha experiência se traduz em sistemas como dashboards de telemetria e aplicativos de produtividade multiplataforma, sempre com foco em código limpo, escalabilidade e performance.",
+      "data_title": "Engenharia & Análise de Dados",
       "data_desc": "Sou especialista em todo o ciclo de vida do dado: da aquisição em ambientes de alta complexidade (telemetria) à criação de pipelines de processamento e aplicação de modelos preditivos com Scikit-learn. Transformo dados brutos em dashboards interativos que revelam insights estratégicos.",
+      "iot_title": "Sistemas Embarcados & IoT",
       "iot_desc": "Projeto e implemento soluções de hardware e software para coleta de dados em tempo real. Tenho experiência prática com ESP32, Raspberry Pi e comunicação LoRa para garantir a integridade e transmissão de dados em ambientes de alta interferência eletromagnética, como o automobilismo.",
+      "leadership_title": "Liderança & Comunicação",
       "leadership_desc": "Liderei uma equipe técnica de 42 membros no projeto Fórmula SAE, alcançando um salto de 12 posições no ranking nacional. Sou adepto da resolução de problemas sob pressão e possuo comunicação eficaz para alinhar objetivos técnicos com a estratégia do projeto em múltiplos idiomas."
+    },
+    "tech": {
+      "iot1": "Telemetria",
+      "leadership1": "Liderança de Equipes",
+      "leadership2": "Resolução de Problemas",
+      "leadership3": "Inglês (Fluente)",
+      "leadership4": "Francês (B2)",
+      "leadership5": "Espanhol (B1)",
+      "leadership6": "Mandarim (Iniciante)"
     }
   },
   "projects": {
@@ -45,16 +58,65 @@
     "buttonMore": "Ver Mais no GitHub"
   },
   "contact": {
-    "title": "Entre em",
-    "titleAccent": "Contato",
-    "subtitle": "Estou aberto a novas oportunidades e colaborações. Vamos construir algo incrível juntos.",
-    "infoTitle": "Informações de Contato",
-    "formName": "Seu Nome",
-    "formEmail": "Seu Email",
-    "formMessage": "Sua Mensagem",
-    "formButton": "Enviar Mensagem",
-    "formSubmitting": "Enviando...",
-    "formSuccess": "Mensagem enviada com sucesso!",
-    "formError": "Ocorreu um erro. Tente novamente."
-  }
-}
+    "statusBadge": "Disponível para novos projetos",
+    "title": "Vamos <gradient>Construir</gradient> Juntos",
+    "subtitle": "Escolha o canal ideal para iniciarmos uma conversa sobre seu próximo projeto.\nCada método foi otimizado para diferentes tipos de colaboração.",
+    "cards": {
+      "whatsapp": {
+        "title": "WhatsApp Business",
+        "subtitle": "Resposta Imediata",
+        "description": "Para discussões rápidas e alinhamento de projetos",
+        "action": "Iniciar Conversa",
+        "responseTime": "~5 min"
+      },
+      "email": {
+        "title": "Email Executivo",
+        "subtitle": "Proposta Detalhada",
+        "description": "Para briefings completos e documentação técnica",
+        "action": "Enviar Email",
+        "responseTime": "~2 horas"
+      },
+      "linkedin": {
+        "title": "LinkedIn Premium",
+        "subtitle": "Networking Profissional",
+        "description": "Para conexões estratégicas e oportunidades",
+        "action": "Conectar",
+        "responseTime": "~1 dia"
+      },
+      "github": {
+        "title": "GitHub",
+        "subtitle": "Colaboração Técnica",
+        "description": "Para discussões sobre código e colaborações open source",
+        "action": "Ver Perfil",
+        "responseTime": "~4 horas"
+      }
+    },
+    "availability": {
+      "online": "Disponível",
+      "busy": "Ocupado",
+      "offline": "Offline"
+    },
+    "formTitle": "Ou envie uma mensagem direta",
+    "formSubtitle": "Prefere um contato mais formal? Use o formulário abaixo.",
+    "form": {
+      "nameLabel": "Nome Completo",
+      "namePlaceholder": "Seu nome",
+      "emailLabel": "Email",
+      "emailPlaceholder": "seu@email.com",
+      "messageLabel": "Mensagem",
+      "messagePlaceholder": "Conte-me sobre seu projeto...",
+      "button": "Enviar Mensagem",
+      "buttonSubmitting": "Enviando...",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Ocorreu um erro. Tente novamente."
+    },
+    "info": {
+      "title": "Informações de Contato",
+      "linkedInSubtitle": "Perfil Profissional",
+      "githubSubtitle": "Repositórios e Projetos"
+    },
+    "stats": {
+      "avgResponse": "Tempo médio de resposta",
+      "responseRate": "Taxa de resposta"
+    }
+  }}

@@ -19,23 +19,36 @@
   },
   "about": {
     "title": "La Intersección entre la Pista y el Código",
-    "p1": "Mi carrera se define por una búsqueda incesante de rendimiento. Aprendí en el automovilismo que la victoria está en los detalles, en los datos y en la capacidad de innovar bajo presión. Hoy, aplico esa misma mentalidad para construir software.",
-    "p2": "Como Desarrollador Full-Stack e Ingeniero de Datos, mi misión es crear las herramientas que transforman datos complejos en ventaja competitiva. No solo analizo los datos, construyo los sistemas de extremo a extremo que los recopilan, procesan y revelan el rendimiento oculto que lleva al éxito.",
+    "p1": "Mi carrera se define por una búsqueda incesante de <1>rendimiento</1>. Aprendí en el automovilismo que la victoria está en los detalles, en los datos y en la capacidad de innovar bajo presión. Hoy, aplico esa misma mentalidad para construir software.",
+    "p2": "Como Desarrollador Full-Stack e Ingeniero de Datos, mi misión es crear las herramientas que transforman <1>datos complejos en ventaja competitiva</1>. No solo analizo los datos, construyo los sistemas de extremo a extremo que los recopilan, procesan y revelan el rendimiento oculto que lleva al éxito.",
     "cardTitle": "Mi Enfoque en Cifras",
     "stat1": "Miembros Liderados en el Proyecto FSAE",
     "stat2": "Posiciones Avanzadas en el Ranking",
     "stat3": "Idiomas para Comunicación Global"
   },
-  "expertise": {
-    "title": "Áreas de",
+"expertise": {
+    "title": "Áreas de <accent>Experiencia</accent>",
     "titleAccent": "Experiencia",
     "subtitle": "Mi enfoque para construir soluciones innovadoras, combinando desarrollo de software, análisis de datos e ingeniería de sistemas.",
     "techLabel": "Tecnologías principales:",
     "tabs": {
+      "fullstack_title": "Desarrollo Full-Stack",
       "fullstack_desc": "Diseño y desarrollo aplicaciones de extremo a extremo, desde API robustas en Node.js y Python hasta interfaces reactivas con React. Mi experiencia se traduce en sistemas como dashboards de telemetría y aplicaciones de productividad multiplataforma, siempre con un enfoque en código limpio, escalabilidad y rendimiento.",
+      "data_title": "Ingeniería y Análisis de Datos",
       "data_desc": "Soy especialista en todo el ciclo de vida de los datos: desde la adquisición en entornos de alta complejidad (telemetría) hasta la creación de pipelines de procesamiento y la aplicación de modelos predictivos con Scikit-learn. Transformo datos brutos en dashboards interactivos que revelan insights estratégicos.",
-      "iot_desc": "Diseño e implemento soluciones de hardware y software para la recopilación de datos en tiempo real. Tengo experiencia práctica con ESP32, Raspberry Pi y comunicación LoRa para garantizar la integridad y transmisión de datos en entornos de alta interferencia electromagnética, como el automovilismo.",
+      "iot_title": "Sistemas Embebidos e IoT",
+      "iot_desc": "Diseño e implemento soluciones de hardware y software para la recopilación de datos en tiempo real. Tengo experiencia práctica con ESP32, Raspberry Pi y comunicación LoRa para garantizar la integridad y transmisión de datos en entornos de alta interferência electromagnética, como el automovilismo.",
+      "leadership_title": "Liderazgo y Comunicación",
       "leadership_desc": "Lideré un equipo técnico de 42 miembros en el proyecto Fórmula SAE, logrando un salto de 12 posiciones en el ranking nacional. Soy adepto a la resolución de problemas bajo presión y poseo una comunicación eficaz para alinear los objetivos técnicos con la estrategia del proyecto en múltiples idiomas."
+    },
+    "tech": {
+      "iot1": "Telemetría",
+      "leadership1": "Liderazgo de Equipos",
+      "leadership2": "Resolución de Problemas",
+      "leadership3": "Inglés (Fluido)",
+      "leadership4": "Francés (B2)",
+      "leadership5": "Español (B1)",
+      "leadership6": "Mandarín (Principiante)"
     }
   },
   "projects": {
@@ -44,17 +57,66 @@
     "subtitle": "Una selección de trabajos que demuestran mi pasión por resolver problemas complejos con tecnología y datos.",
     "buttonMore": "Ver Más en GitHub"
   },
-  "contact": {
-    "title": "Ponerse en",
-    "titleAccent": "Contacto",
-    "subtitle": "Estoy abierto a nuevas oportunidades y colaboraciones. Construyamos algo increíble juntos.",
-    "infoTitle": "Información de Contacto",
-    "formName": "Tu Nombre",
-    "formEmail": "Tu Email",
-    "formMessage": "Tu Mensaje",
-    "formButton": "Enviar Mensaje",
-    "formSubmitting": "Enviando...",
-    "formSuccess": "¡Mensaje enviado con éxito!",
-    "formError": "Ocurrió un error. Inténtalo de nuevo."
-  }
-}
+"contact": {
+    "statusBadge": "Disponible para nuevos proyectos",
+    "title": "Vamos a <gradient>Construir</gradient> Juntos",
+    "subtitle": "Elige el canal ideal para iniciar una conversación sobre tu próximo proyecto.\nCada método está optimizado para diferentes tipos de colaboración.",
+    "cards": {
+      "whatsapp": {
+        "title": "WhatsApp Business",
+        "subtitle": "Respuesta Inmediata",
+        "description": "Para discusiones rápidas y alineación de proyectos",
+        "action": "Iniciar Conversación",
+        "responseTime": "~5 min"
+      },
+      "email": {
+        "title": "Email Ejecutivo",
+        "subtitle": "Propuesta Detallada",
+        "description": "Para informes completos y documentación técnica",
+        "action": "Enviar Email",
+        "responseTime": "~2 horas"
+      },
+      "linkedin": {
+        "title": "LinkedIn Premium",
+        "subtitle": "Networking Profesional",
+        "description": "Para conexiones estratégicas y oportunidades",
+        "action": "Conectar",
+        "responseTime": "~1 día"
+      },
+      "github": {
+        "title": "GitHub",
+        "subtitle": "Colaboración Técnica",
+        "description": "Para discusiones sobre código y colaboraciones open source",
+        "action": "Ver Perfil",
+        "responseTime": "~4 horas"
+      }
+    },
+    "availability": {
+      "online": "Disponible",
+      "busy": "Ocupado",
+      "offline": "Offline"
+    },
+    "formTitle": "O envía un mensaje directo",
+    "formSubtitle": "¿Prefieres un contacto más formal? Usa el formulario a continuación.",
+    "form": {
+      "nameLabel": "Nombre Completo",
+      "namePlaceholder": "Tu nombre",
+      "emailLabel": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+      "button": "Enviar Mensaje",
+      "buttonSubmitting": "Enviando...",
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Ocurrió un error. Inténtalo de nuevo."
+    },
+    "info": {
+      "title": "Información de Contacto",
+      "linkedInSubtitle": "Perfil Profesional",
+      "githubSubtitle": "Repositorios y Proyectos"
+    },
+    "stats": {
+      "avgResponse": "Tiempo medio de respuesta",
+      "responseRate": "Tasa de respuesta"
+    }
+  }}

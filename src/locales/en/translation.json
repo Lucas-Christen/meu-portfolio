@@ -19,23 +19,36 @@
   },
   "about": {
     "title": "The Intersection of the Racetrack and Code",
-    "p1": "My career is defined by a relentless pursuit of performance. I learned in motorsport that victory lies in the details, in the data, and in the ability to innovate under pressure. Today, I apply that same mentality to building software.",
-    "p2": "As a Full-Stack Developer and Data Engineer, my mission is to create the tools that transform complex data into a competitive advantage. I don't just analyze data—I build the end-to-end systems that collect, process, and reveal the hidden performance that leads to success.",
+    "p1": "My career is defined by a relentless pursuit of <1>performance</1>. I learned in motorsport that victory lies in the details, in the data, and in the ability to innovate under pressure. Today, I apply that same mentality to building software.",
+    "p2": "As a Full-Stack Developer and Data Engineer, my mission is to create the tools that transform <1>complex data into a competitive advantage</1>. I don't just analyze data—I build the end-to-end systems that collect, process, and reveal the hidden performance that leads to success.",
     "cardTitle": "My Approach in Numbers",
     "stat1": "Members Led in the FSAE Project",
     "stat2": "Advanced Positions in the Ranking",
     "stat3": "Languages for Global Communication"
   },
-  "expertise": {
-    "title": "Areas of",
+"expertise": {
+    "title": "Areas of <accent>Expertise</accent>",
     "titleAccent": "Expertise",
     "subtitle": "My approach to building innovative solutions, combining software development, data analysis, and systems engineering.",
     "techLabel": "Main technologies:",
     "tabs": {
+      "fullstack_title": "Full-Stack Development",
       "fullstack_desc": "I design and develop end-to-end applications, from robust APIs in Node.js and Python to reactive interfaces with React. My experience translates into systems like telemetry dashboards and cross-platform productivity applications, always with a focus on clean code, scalability, and performance.",
+      "data_title": "Data Engineering & Analysis",
       "data_desc": "I specialize in the entire data lifecycle: from acquisition in highly complex environments (telemetry) to the creation of processing pipelines and the application of predictive models with Scikit-learn. I transform raw data into interactive dashboards that reveal strategic insights.",
+      "iot_title": "Embedded Systems & IoT",
       "iot_desc": "I design and implement hardware and software solutions for real-time data collection. I have hands-on experience with ESP32, Raspberry Pi, and LoRa communication to ensure data integrity and transmission in environments with high electromagnetic interference, such as motorsport.",
+      "leadership_title": "Leadership & Communication",
       "leadership_desc": "I led a technical team of 42 members in the Formula SAE project, achieving a 12-position jump in the national ranking. I am adept at problem-solving under pressure and have effective communication skills to align technical objectives with project strategy in multiple languages."
+    },
+    "tech": {
+      "iot1": "Telemetry",
+      "leadership1": "Team Leadership",
+      "leadership2": "Problem Solving",
+      "leadership3": "English (Fluent)",
+      "leadership4": "French (B2)",
+      "leadership5": "Spanish (B1)",
+      "leadership6": "Mandarin (Beginner)"
     }
   },
   "projects": {
@@ -44,17 +57,66 @@
     "subtitle": "A selection of works that demonstrate my passion for solving complex problems with technology and data.",
     "buttonMore": "See More on GitHub"
   },
-  "contact": {
-    "title": "Get in",
-    "titleAccent": "Touch",
-    "subtitle": "I am open to new opportunities and collaborations. Let's build something amazing together.",
-    "infoTitle": "Contact Information",
-    "formName": "Your Name",
-    "formEmail": "Your Email",
-    "formMessage": "Your Message",
-    "formButton": "Send Message",
-    "formSubmitting": "Sending...",
-    "formSuccess": "Message sent successfully!",
-    "formError": "An error occurred. Please try again."
-  }
-}
+"contact": {
+    "statusBadge": "Available for new projects",
+    "title": "Let's <gradient>Build</gradient> Together",
+    "subtitle": "Choose the ideal channel to start a conversation about your next project.\nEach method is optimized for different types of collaboration.",
+    "cards": {
+      "whatsapp": {
+        "title": "WhatsApp Business",
+        "subtitle": "Immediate Response",
+        "description": "For quick discussions and project alignment",
+        "action": "Start Chat",
+        "responseTime": "~5 min"
+      },
+      "email": {
+        "title": "Executive Email",
+        "subtitle": "Detailed Proposal",
+        "description": "For complete briefings and technical documentation",
+        "action": "Send Email",
+        "responseTime": "~2 hours"
+      },
+      "linkedin": {
+        "title": "LinkedIn Premium",
+        "subtitle": "Professional Networking",
+        "description": "For strategic connections and opportunities",
+        "action": "Connect",
+        "responseTime": "~1 day"
+      },
+      "github": {
+        "title": "GitHub",
+        "subtitle": "Technical Collaboration",
+        "description": "For code discussions and open source collaborations",
+        "action": "View Profile",
+        "responseTime": "~4 hours"
+      }
+    },
+    "availability": {
+      "online": "Available",
+      "busy": "Busy",
+      "offline": "Offline"
+    },
+    "formTitle": "Or send a direct message",
+    "formSubtitle": "Prefer a more formal contact? Use the form below.",
+    "form": {
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your@email.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell me about your project...",
+      "button": "Send Message",
+      "buttonSubmitting": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "An error occurred. Please try again."
+    },
+    "info": {
+      "title": "Contact Information",
+      "linkedInSubtitle": "Professional Profile",
+      "githubSubtitle": "Repositories & Projects"
+    },
+    "stats": {
+      "avgResponse": "Average response time",
+      "responseRate": "Response rate"
+    }
+  }}

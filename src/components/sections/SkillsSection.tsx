@@ -1,8 +1,15 @@
+// src/components/sections/SkillsSection.tsx
+
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { expertiseData, ExpertiseItem } from '../../data/expertise'; // Importe o tipo também
+import { getExpertiseData, ExpertiseItem } from '../../data/expertise';
+import { useTranslation, Trans } from 'react-i18next';
 
 const SkillsSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ setActiveSection }) => {
+  // 1. Pegamos a instância 'i18n' para monitorar a linguagem
+  const { t, i18n } = useTranslation(); 
+  const expertiseData = getExpertiseData(t);
+
   const [selectedTab, setSelectedTab] = useState(expertiseData[0]);
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { amount: 0.5 });
@@ -12,6 +19,19 @@ const SkillsSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ s
       setActiveSection('skills');
     }
   }, [isInView, setActiveSection]);
+  
+  // ==================================================================
+  // 2. A CORREÇÃO ESTÁ AQUI: Este useEffect sincroniza o estado
+  // ==================================================================
+  useEffect(() => {
+    // Encontra a aba correspondente na lista de dados recém-traduzida
+    const updatedTab = expertiseData.find(tab => tab.id === selectedTab.id);
+    if (updatedTab) {
+      // Atualiza o estado com a versão traduzida da aba que já estava selecionada
+      setSelectedTab(updatedTab);
+    }
+  }, [i18n.language]); // A mágica: Este código só roda quando o idioma muda
+  // ==================================================================
 
   const contentRef = useRef<HTMLDivElement>(null);
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -33,16 +53,21 @@ const SkillsSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ s
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
-            Áreas de <span className="text-accent">Expertise</span>
+            <Trans
+              i18nKey="expertise.title"
+              components={{
+                accent: <span className="text-accent" />,
+              }}
+            />
           </h2>
           <p className="text-text-secondary text-lg max-w-3xl mx-auto">
-            Minha abordagem para construir soluções inovadoras, combinando desenvolvimento de software, análise de dados e engenharia de sistemas.
+            {t('expertise.subtitle')}
           </p>
         </motion.div>
+        
         <div className="flex flex-col lg:flex-row gap-8 min-h-[450px]">
           <div className="flex lg:flex-col gap-2">
             {expertiseData.map((item: ExpertiseItem) => (
-
               <button
                 key={item.id}
                 className={`relative w-full text-left p-4 rounded-lg transition-colors duration-300 ${
@@ -65,6 +90,7 @@ const SkillsSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ s
               </button>
             ))}
           </div>
+          
           <div 
             ref={contentRef}
             onMouseMove={handleMouseMove}
@@ -78,33 +104,37 @@ const SkillsSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ s
             />
             <AnimatePresence mode="wait">
               <motion.div
-                key={selectedTab.id}
+                key={selectedTab ? selectedTab.id : 'empty'}
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -10, opacity: 0 }}
                 transition={{ duration: 0.3 }}
                 className="w-full h-full relative z-10 flex flex-col justify-between"
               >
-                <div>
-                  <h3 className="text-4xl font-bold text-text-primary mb-4">{selectedTab.title}</h3>
-                  <p className="text-text-secondary text-lg leading-relaxed mb-8">{selectedTab.description}</p>
-                </div>
-                <div>
-                  <h4 className="text-md font-semibold text-text-secondary mb-4">Tecnologias principais:</h4>
-                  <div className="flex flex-wrap gap-3">
-                    {selectedTab.tech.map((t: string) => (
-                      <motion.span
-                        key={t}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3 }}
-                        className="bg-background-secondary text-sm text-accent font-mono py-2 px-4 rounded-full"
-                      >
-                        {t}
-                      </motion.span>
-                    ))}
-                  </div>
-                </div>
+                {selectedTab && (
+                  <>
+                    <div>
+                      <h3 className="text-4xl font-bold text-text-primary mb-4">{selectedTab.title}</h3>
+                      <p className="text-text-secondary text-lg leading-relaxed mb-8">{selectedTab.description}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-md font-semibold text-text-secondary mb-4">{t('expertise.techLabel')}</h4>
+                      <div className="flex flex-wrap gap-3">
+                        {selectedTab.tech.map((tech: string) => (
+                          <motion.span
+                            key={tech}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.3 }}
+                            className="bg-background-secondary text-sm text-accent font-mono py-2 px-4 rounded-full"
+                          >
+                            {tech}
+                          </motion.span>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
@@ -113,4 +143,5 @@ const SkillsSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ s
     </section>
   );
 };
+
 export default SkillsSection;

@@ -1,21 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600&display=swap');
+/* src/index.css */
+
+/* 1. Importa as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* 2. Inclui as bases do Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 3. Camada Base: Define os estilos padrão para todo o site */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    @apply bg-background-primary text-text-primary font-sans;
+    /* Define a fonte 'body' (Montserrat) e as cores padrão */
+    @apply bg-background-primary text-text-primary font-body;
     margin: 0;
     min-height: 100vh;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    /* Define a fonte 'title' (DM Serif Text) para todos os títulos */
+    @apply font-title;
+  }
 }
 
+/* 4. Camada de Componentes: Sua "aba dedicada" para estilos reutilizáveis */
 @layer components {
+  /* ============================================= */
+  /* Componentes de Tipografia                     */
+  /* ============================================= */
+  .titulo-secao {
+    @apply font-title text-4xl font-bold text-text-primary md:text-5xl;
+  }
+  
+  .subtitulo-secao {
+    @apply font-body text-lg text-text-secondary max-w-3xl mx-auto;
+  }
+  
+  .texto-corpo {
+    @apply font-body text-lg leading-relaxed text-text-secondary;
+  }
+
+  /* ============================================= */
+  /* Componentes de Botão                          */
+  /* ============================================= */
   .btn-primary {
     @apply px-6 py-3 border-2 border-accent text-accent font-medium rounded-lg 
            hover:bg-accent hover:text-background-primary transition-all duration-300 
@@ -28,6 +59,9 @@
            focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50;
   }
   
+  /* ============================================= */
+  /* Componentes de Layout e Efeitos               */
+  /* ============================================= */
   .section-padding {
     @apply py-20 px-4;
   }
