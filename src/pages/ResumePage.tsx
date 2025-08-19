@@ -33,9 +33,8 @@ const ResumePage: React.FC = () => {
             <span>{t('resume.alignment')}</span>
           </div>
           <a 
-            href={cvFile} 
-            download={`LucasChristen_CV_${i18n.language.toUpperCase()}.pdf`}
-            onError={(e) => { e.currentTarget.href = fallbackCv }}
+            href="/CVPTBR.pdf" 
+            download="CV-Lucas-Christen.pdf"
             className="btn-primary group mt-8 inline-flex items-center"
           >
             {t('hero.buttonCV')}

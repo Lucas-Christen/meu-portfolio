@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaRocket, FaChartLine, FaUsers, FaDownload } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Importado
 import StatCard from '../ui/StatCard';
 import { useTranslation } from 'react-i18next';
 
@@ -73,14 +74,15 @@ const HeroSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ set
             transition={{ duration: 0.7, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a href="#projects" className="btn-primary group">
+            <a href="#projects" className="btn-primary group inline-flex items-center justify-center">
               {t('hero.buttonProjects')}
               <FaRocket className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a href="/CVPTBR.pdf" download className="btn-secondary group">
+            {/* O botão agora é um link para a página /curriculo */}
+            <Link to="/curriculo" className="btn-secondary group inline-flex items-center justify-center">
               {t('hero.buttonCV')}
               <FaDownload className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

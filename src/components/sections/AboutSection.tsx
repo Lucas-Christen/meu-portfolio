@@ -1,11 +1,12 @@
 import React, { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaDownload, FaUsers, FaTrophy, FaGlobe } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Importado
 import AnimatedNumber from '../ui/AnimatedNumber';
-import { useTranslation, Trans } from 'react-i18next'; // Importe o useTranslation e o Trans
+import { useTranslation, Trans } from 'react-i18next'; 
 
 const AboutSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ setActiveSection }) => {
-  const { t } = useTranslation(); // Inicialize o hook
+  const { t } = useTranslation(); 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { amount: 0.5 });
 
@@ -54,7 +55,7 @@ const AboutSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ se
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-4xl font-bold mb-8 text-text-primary text-center"
+              className="text-4xl font-bold mb-8 text-text-primary text-center lg:text-left"
             >
               {t('about.title')}
             </motion.h2>
@@ -75,17 +76,21 @@ const AboutSection: React.FC<{ setActiveSection: (id: string) => void }> = ({ se
                 </Trans>
               </p>
             </motion.div>
-            <motion.a
-              href="/CVPTBR.pdf"
-              download
+            {/* O botão agora é um link para a página /curriculo, envolto em motion.div para manter a animação */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="btn-primary group mt-10 inline-flex items-center"
+              className="mt-10 inline-block"
             >
-              {t('hero.buttonCV')}
-              <FaDownload className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </motion.a>
+              <Link
+                to="/curriculo"
+                className="btn-primary group inline-flex items-center"
+              >
+                {t('hero.buttonCV')}
+                <FaDownload className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
           </div>
           
           {/* --- Card de Estatísticas --- */}
