@@ -5,9 +5,10 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Layout from "./components/Layout";
 import Preloader from "./components/Preloader";
 
-// Importe as novas páginas
+// Importe as páginas
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ResumePage = lazy(() => import("./pages/ResumePage"));
+const RealisticResumePage = lazy(() => import("./pages/RealisticResumePage")); // Nova página importada
 
 const App: React.FC = () => {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -34,6 +35,8 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<HomePage setActiveSection={setActiveSection} />} />
             <Route path="/curriculo" element={<ResumePage />} />
+            {/* Nova rota para a página de currículo realista */}
+            <Route path="/realistic-curriculo" element={<RealisticResumePage />} />
           </Routes>
         </Layout>
       )}

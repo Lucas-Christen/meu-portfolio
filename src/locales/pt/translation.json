@@ -113,37 +113,94 @@
     "title": "Projetos em <accent>Destaque</accent>",
     "subtitle": "Uma seleção de trabalhos que demonstram minha paixão por resolver problemas complexos com tecnologia e dados.",
     "buttonMore": "Ver Mais no GitHub",
-    "items": {
-      "telemetry": {
-        "title": "Sistema de Telemetria IoT para Fórmula SAE",
-        "description": "Sistema IoT completo para telemetria em tempo real, utilizando ESP32 e LoRa no veículo e uma estação base com Raspberry Pi e Flask API para processamento e armazenamento de dados em MySQL. A interface gráfica multiplataforma foi desenvolvida em Python com PySide6 (Qt) para visualização e análise de performance.",
-        "tags": ["IoT", "ESP32", "LoRa", "Raspberry Pi", "Python", "Flask", "PySide6"]
-      },
-      "captain": {
-        "title": "Capitão e Engenheiro de Sistemas (UTForce E-Racing)",
-        "description": "Liderei a construção do protótipo de carro elétrico, sendo responsável pelo sistema de alta tensão, diagnóstico e reparo do BMS (Battery Management System), e pela montagem e integração geral. Garanti um patrocínio estratégico para componentes essenciais, culminando na entrega de um veículo totalmente funcional.",
-        "tags": ["Liderança de Equipe", "Gestão de Projetos", "Sistemas Elétricos", "Alta Tensão", "BMS", "Diagnóstico de Falhas"]
-      },
-      "tires": {
-        "title": "Sistema de Gerenciamento de Pneus (Motorsport)",
-        "description": "Aplicação desktop (PySide6) para gerenciamento de pneus e análise de setup em motorsport. O sistema calcula correções de pressão, exporta relatórios e visualiza a distribuição de rigidez do carro com heatmaps, auxiliando na tomada de decisão estratégica.",
-        "tags": ["PySide6", "Python", "Motorsport", "Análise de Dados", "Desktop App"]
-      },
-      "commandCenter": {
-        "title": "Central de Comando Pessoal",
-        "description": "Aplicativo de produtividade desktop multiplataforma (Win/Mac/Linux) com arquitetura modular, construído com Electron.js, Node.js e React. Inclui módulos de finanças, tarefas, metas com gamificação e saúde, com gráficos dinâmicos e notificações nativas.",
-        "tags": ["Electron.js", "Node.js", "React", "Desktop App", "JavaScript"]
-      },
-      "pokemon": {
-        "title": "Sistema de Análise de Dados Pokémon",
-        "description": "Aplicação Full Stack (Ionic/Angular) que transforma uma Pokédex em uma plataforma de análise de dados. Coleta e processa métricas de 1000+ Pokémon, incluindo estatísticas, metadados e comportamento do usuário, utilizando webhooks customizados, cache LRU e streaming de dados com RxJS para otimização de UX em tempo real.",
-        "tags": ["Ionic", "Angular", "TypeScript", "Análise de Dados", "RxJS", "Full Stack"]
-      },
-      "webTelemetry": {
-        "title": "Dashboard de Telemetria Web",
-        "description": "Aplicação web para análise e visualização de dados de telemetria em tempo real, com backend em Python/Flask e frontend interativo construído com HTML, CSS, JavaScript e Chart.js para gráficos dinâmicos.",
-        "tags": ["Flask", "Python", "JavaScript", "Chart.js", "HTML/CSS"]
-      }
+    "telemetry": {
+      "title": "Sistema de Telemetria IoT para Fórmula SAE",
+      "organization": "UTForce E-Racing FSAE",
+      "duration": "2023 - Presente",
+      "description": "Sistema IoT completo para telemetria em tempo real, utilizando ESP32 e LoRa no veículo e uma estação base com Raspberry Pi e Flask API para processamento e armazenamento de dados em MySQL. A interface gráfica multiplataforma foi desenvolvida em Python com PySide6 (Qt) para visualização e análise de performance.",
+      "achievements": [
+        "Arquitetura de sensores flexível (suporte para 4-30+ sensores)",
+        "Frequência de coleta de dados configurável",
+        "Detecção de acidentes em tempo real via anomalias de temperatura",
+        "Atualmente em uso pela equipe"
+      ],
+      "businessImpact": "Permitiu a primeira participação da equipe em competições desde 2018, contribuindo para o 13º lugar."
+    },
+    "captain": {
+      "title": "Capitão e Engenheiro de Sistemas (UTForce E-Racing)",
+      "organization": "UTForce E-Racing FSAE",
+      "duration": "2022.2 - 2025.1",
+      "description": "Liderei a construção do protótipo de carro elétrico, sendo responsável pelo sistema de alta tensão, diagnóstico e reparo do BMS (Battery Management System), e pela montagem e integração geral. Garanti um patrocínio estratégico para componentes essenciais, culminando na entrega de um veículo totalmente funcional.",
+      "achievements": [
+        "Liderança de equipe técnica com 42 membros",
+        "Salto de 12 posições no ranking nacional (25º para 13º)",
+        "Desenvolvimento completo do sistema de bateria e telemetria",
+        "Captação de patrocínio para componentes críticos"
+      ],
+      "businessImpact": "Viabilizou a competitividade da equipe no cenário nacional e garantiu a entrega de um protótipo funcional sob restrições orçamentárias."
+    },
+    "f1Prediction": {
+      "title": "Modelo de ML para Previsão de Resultados da F1",
+      "organization": "Projeto Pessoal",
+      "duration": "2024",
+      "description": "Modelo de machine learning para previsão de resultados de corridas de Fórmula 1, utilizando dados históricos da API FastF1.",
+      "achievements": [
+        "Análise de dados históricos e engenharia de features",
+        "Implementação de modelagem preditiva",
+        "Validação de performance contra resultados reais"
+      ],
+      "businessImpact": "Demonstra capacidades de ML no domínio de análise de dados de automobilismo."
+    },
+    "autonomousVehicle": {
+      "title": "Prevenção de Acidentes em Veículos Autônomos",
+      "organization": "GSA (Grupo de Sistemas Automotivos)",
+      "duration": "2025 - Presente",
+      "description": "Desenvolvendo um modelo de ML para previsão de acidentes em veículos autônomos, usando análise de padrões de marcha.",
+      "achievements": [
+        "Análise de padrões de marcha em tempo real",
+        "Desenvolvimento de algoritmo de previsão de acidentes",
+        "Parceria com grupo de pesquisa automotiva"
+      ],
+      "businessImpact": "Avançando a segurança de veículos autônomos através de análise preditiva."
+    },
+    "tires": {
+      "title": "Sistema de Gerenciamento de Pneus (Motorsport)",
+      "organization": "Projeto de Motorsport",
+      "duration": "2024",
+      "description": "Aplicação desktop (PySide6) para gerenciamento de pneus e análise de setup em motorsport. O sistema calcula correções de pressão, exporta relatórios e visualiza a distribuição de rigidez do carro com heatmaps, auxiliando na tomada de decisão estratégica.",
+      "achievements": [
+        "Cálculo automatizado de correção de pressão",
+        "Exportação de relatórios detalhados",
+        "Visualização de dados com heatmaps para análise de rigidez",
+        "Ferramenta de apoio à decisão estratégica para engenheiros de pista"
+      ],
+      "businessImpact": "Otimiza o uso de pneus e a configuração do veículo, impactando diretamente o desempenho na pista."
+    },
+    "commandCenter": {
+      "title": "Central de Comando Pessoal",
+      "organization": "Projeto Pessoal",
+      "duration": "2023",
+      "description": "Aplicativo de produtividade desktop multiplataforma (Win/Mac/Linux) com arquitetura modular, construído com Electron.js, Node.js e React. Inclui módulos de finanças, tarefas, metas com gamificação e saúde, com gráficos dinâmicos e notificações nativas.",
+      "achievements": [
+        "Arquitetura modular para fácil expansão",
+        "Interface reativa com gráficos dinâmicos",
+        "Suporte multiplataforma (Windows, macOS, Linux)",
+        "Notificações nativas do sistema operacional"
+      ],
+      "businessImpact": "Plataforma centralizada para gerenciamento de produtividade pessoal e metas."
+    },
+    "pokemon": {
+      "title": "Sistema de Análise de Dados Pokémon",
+      "organization": "Projeto Full Stack",
+      "duration": "2023",
+      "description": "Aplicação Full Stack (Ionic/Angular) que transforma uma Pokédex em uma plataforma de análise de dados. Coleta e processa métricas de 1000+ Pokémon, incluindo estatísticas, metadados e comportamento do usuário, utilizando webhooks customizados, cache LRU e streaming de dados com RxJS para otimização de UX em tempo real.",
+      "achievements": [
+        "Coleta e processamento de dados de mais de 1000 Pokémon",
+        "Implementação de cache LRU para otimização",
+        "Streaming de dados em tempo real com RxJS",
+        "Uso de webhooks para atualização de dados"
+      ],
+      "businessImpact": "Demonstra a capacidade de construir uma aplicação Full Stack complexa com foco em performance e análise de dados."
     }
   },
   "contact": {

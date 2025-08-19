@@ -3,7 +3,7 @@
     "home": "Home",
     "about": "About",
     "expertise": "Expertise",
-    "resume": "Curricullum",
+    "resume": "Resume",
     "projects": "Projects",
     "contact": "Contact"
   },
@@ -11,12 +11,12 @@
     "title": "Lucas Fernandes Christen | Full-Stack Developer & Data Engineer",
     "description": "Portfolio of Lucas Fernandes Christen, a Full-Stack Developer and Data Engineer specializing in high-performance automotive systems."
   },
-    "footer": {
+  "footer": {
     "copyright": "All rights reserved.",
     "subtitle": "Full-Stack Developer | Data Engineer | Automotive Systems Specialist",
     "madeWith": "Made with",
     "andCoffee": "and a lot of coffee"
-  },  
+  },
   "hero": {
     "statusBar": "Operating System: Lucas Christen v3.0",
     "title1": "Lucas Fernandes",
@@ -37,9 +37,8 @@
     "stat2": "Advanced Positions in the Ranking",
     "stat3": "Languages for Global Communication"
   },
-"expertise": {
+  "expertise": {
     "title": "Areas of <accent>Expertise</accent>",
-    "titleAccent": "Expertise",
     "subtitle": "My approach to building innovative solutions, combining software development, data analysis, and systems engineering.",
     "techLabel": "Main technologies:",
     "tabs": {
@@ -65,7 +64,7 @@
   "resume": {
     "characterName": "Lucas Fernandes Christen",
     "characterClass": "Performance Engineer | Level 4",
-    "race": "Human (Variant: Problem Solver)",
+    "race": "Human (Variant: Problem-Solver)",
     "alignment": "Lawful Good",
     "attributes": {
       "title": "Core Attributes",
@@ -84,17 +83,17 @@
       "management": { "title": "Management & Soft Skills" }
     },
     "equipment": {
-        "title": "Equipment (Inventory)",
-        "weapon": { "name": "Primary Weapon", "description": "Visual Studio Code" },
-        "shield": { "name": "Shield", "description": "Git & GitHub" },
-        "amulet": { "name": "Amulet", "description": "Docker" },
-        "potion": { "name": "Potions", "description": "Coffee & Tech Docs" }
+      "title": "Equipment (Inventory)",
+      "weapon": { "name": "Primary Weapon", "description": "Visual Studio Code" },
+      "shield": { "name": "Shield", "description": "Git & GitHub" },
+      "amulet": { "name": "Amulet", "description": "Docker" },
+      "potion": { "name": "Potions", "description": "Coffee & Technical Documentation" }
     },
     "languages": {
-        "title": "Languages",
-        "fluent": "Fluent",
-        "intermediate": "Intermediate",
-        "beginner": "Beginner"
+      "title": "Languages",
+      "fluent": "Fluent",
+      "intermediate": "Intermediate",
+      "beginner": "Beginner"
     },
     "timelineTitle": "Journey & Feats",
     "timeline": [
@@ -105,48 +104,105 @@
       { "type": "education", "date": "2022.2 - 2025", "title": "Electrical Engineering (Incomplete)", "subtitle": "UTFPR, Ponta Grossa", "description": "Course focused on electrical systems that served as a foundation for specializing in automotive systems." }
     ],
     "backstory": {
-        "title": "Character Backstory",
-        "content": "Hailing from the forges of electrical engineering and trained on the racetracks of Formula SAE, Lucas Christen discovered his true calling was to decipher the secrets hidden within data..."
+      "title": "Character Story",
+      "content": "Forged in the fires of electrical engineering and trained on the racetracks of Formula SAE, Lucas Christen discovered his true calling was to decipher the secrets hidden within data..."
     }
   },
-"projects": {
+  "projects": {
     "title": "Projects in the <accent>Spotlight</accent>",
     "subtitle": "A selection of works that demonstrate my passion for solving complex problems with technology and data.",
     "buttonMore": "See More on GitHub",
-    "items": {
-      "telemetry": {
-        "title": "IoT Telemetry System for Formula SAE",
-        "description": "Complete IoT system for real-time telemetry, using ESP32 and LoRa in the vehicle and a base station with Raspberry Pi and a Flask API for data processing and storage in MySQL. The cross-platform graphical interface was developed in Python with PySide6 (Qt) for performance visualization and analysis.",
-        "tags": ["IoT", "ESP32", "LoRa", "Raspberry Pi", "Python", "Flask", "PySide6"]
-      },
-      "captain": {
-        "title": "Captain and Systems Engineer (UTForce E-Racing)",
-        "description": "I led the construction of the electric car prototype, being responsible for the high-voltage system, diagnosis and repair of the BMS (Battery Management System), and for the general assembly and integration. I secured a strategic sponsorship for essential components, culminating in the delivery of a fully functional vehicle.",
-        "tags": ["Team Leadership", "Project Management", "Electrical Systems", "High Voltage", "BMS", "Fault Diagnosis"]
-      },
-      "tires": {
-        "title": "Tire Management System (Motorsport)",
-        "description": "Desktop application (PySide6) for tire management and setup analysis in motorsport. The system calculates pressure corrections, exports reports, and visualizes the car's stiffness distribution with heatmaps, aiding in strategic decision-making.",
-        "tags": ["PySide6", "Python", "Motorsport", "Data Analysis", "Desktop App"]
-      },
-      "commandCenter": {
-        "title": "Personal Command Center",
-        "description": "Cross-platform desktop productivity application (Win/Mac/Linux) with a modular architecture, built with Electron.js, Node.js, and React. It includes modules for finance, tasks, gamified goals, and health, with dynamic charts and native notifications.",
-        "tags": ["Electron.js", "Node.js", "React", "Desktop App", "JavaScript"]
-      },
-      "pokemon": {
-        "title": "Pokémon Data Analysis System",
-        "description": "A Full Stack application (Ionic/Angular) that transforms a Pokédex into a data analysis platform. It collects and processes metrics from 1000+ Pokémon, including stats, metadata, and user behavior, using custom webhooks, LRU cache, and RxJS data streaming for real-time UX optimization.",
-        "tags": ["Ionic", "Angular", "TypeScript", "Data Analysis", "RxJS", "Full Stack"]
-      },
-      "webTelemetry": {
-        "title": "Web Telemetry Dashboard",
-        "description": "Web application for real-time telemetry data analysis and visualization, with a Python/Flask backend and an interactive frontend built with HTML, CSS, JavaScript, and Chart.js for dynamic charts.",
-        "tags": ["Flask", "Python", "JavaScript", "Chart.js", "HTML/CSS"]
-      }
+    "telemetry": {
+      "title": "IoT Telemetry System for Formula SAE",
+      "organization": "UTForce E-Racing FSAE",
+      "duration": "2023 - Present",
+      "description": "Complete IoT system for real-time telemetry, using ESP32 and LoRa in the vehicle and a base station with Raspberry Pi and Flask API for processing and storing data in MySQL. The cross-platform graphical interface was developed in Python with PySide6 (Qt) for performance visualization and analysis.",
+      "achievements": [
+        "Flexible sensor architecture (4-30+ sensors supported)",
+        "Configurable data collection frequency",
+        "Real-time accident detection via temperature anomalies",
+        "Currently in production use by team"
+      ],
+      "businessImpact": "Enabled the team's first competition participation since 2018, contributing to a 13th place finish."
+    },
+    "captain": {
+      "title": "Captain and Systems Engineer (UTForce E-Racing)",
+      "organization": "UTForce E-Racing FSAE",
+      "duration": "2022.2 - 2025.1",
+      "description": "Led the construction of the electric car prototype, being responsible for the high-voltage system, diagnosis and repair of the BMS (Battery Management System), and for the general assembly and integration. Secured a strategic sponsorship for essential components, culminating in the delivery of a fully functional vehicle.",
+      "achievements": [
+        "Leadership of a technical team with 42 members",
+        "Jump of 12 positions in the national ranking (25th to 13th)",
+        "Complete development of the battery and telemetry system",
+        "Secured sponsorship for critical components"
+      ],
+      "businessImpact": "Made the team competitive on the national scene and ensured the delivery of a functional prototype under budget constraints."
+    },
+    "f1Prediction": {
+      "title": "F1 Race Results Prediction ML Model",
+      "organization": "Personal Project",
+      "duration": "2024",
+      "description": "Machine learning model for Formula 1 race result prediction using FastF1 API historical data.",
+      "achievements": [
+        "Historical data analysis and feature engineering",
+        "Predictive modeling implementation",
+        "Performance validation against actual results"
+      ],
+      "businessImpact": "Demonstrates ML capabilities in the motorsport data analysis domain."
+    },
+    "autonomousVehicle": {
+      "title": "Autonomous Vehicle Accident Prevention",
+      "organization": "GSA (Automotive Systems Group)",
+      "duration": "2025 - Present",
+      "description": "Developing an ML model for accident prediction in autonomous vehicles, using gait pattern analysis.",
+      "achievements": [
+        "Real-time gait pattern analysis",
+        "Accident prediction algorithm development",
+        "Partnership with automotive research group"
+      ],
+      "businessImpact": "Advancing autonomous vehicle safety through predictive analytics."
+    },
+    "tires": {
+      "title": "Tire Management System (Motorsport)",
+      "organization": "Motorsport Project",
+      "duration": "2024",
+      "description": "Desktop application (PySide6) for tire management and setup analysis in motorsport. The system calculates pressure corrections, exports reports, and visualizes the car's stiffness distribution with heatmaps, aiding in strategic decision-making.",
+      "achievements": [
+        "Automated pressure correction calculation",
+        "Export of detailed reports",
+        "Data visualization with heatmaps for stiffness analysis",
+        "Strategic decision support tool for track engineers"
+      ],
+      "businessImpact": "Optimizes tire usage and vehicle setup, directly impacting on-track performance."
+    },
+    "commandCenter": {
+      "title": "Personal Command Center",
+      "organization": "Personal Project",
+      "duration": "2023",
+      "description": "Cross-platform desktop productivity application (Win/Mac/Linux) with a modular architecture, built with Electron.js, Node.js, and React. Includes modules for finance, tasks, gamified goals, and health, with dynamic charts and native notifications.",
+      "achievements": [
+        "Modular architecture for easy expansion",
+        "Reactive interface with dynamic charts",
+        "Cross-platform support (Windows, macOS, Linux)",
+        "Native operating system notifications"
+      ],
+      "businessImpact": "Centralized platform for managing personal productivity and goals."
+    },
+    "pokemon": {
+      "title": "Pokémon Data Analysis System",
+      "organization": "Full Stack Project",
+      "duration": "2023",
+      "description": "Full Stack application (Ionic/Angular) that transforms a Pokédex into a data analysis platform. Collects and processes metrics from 1000+ Pokémon, including stats, metadata, and user behavior, using custom webhooks, LRU cache, and RxJS data streaming for real-time UX optimization.",
+      "achievements": [
+        "Data collection and processing for over 1000 Pokémon",
+        "LRU cache implementation for optimization",
+        "Real-time data streaming with RxJS",
+        "Use of webhooks for data updates"
+      ],
+      "businessImpact": "Demonstrates the ability to build a complex Full Stack application with a focus on performance and data analysis."
     }
   },
-"contact": {
+  "contact": {
     "statusBadge": "Available for new projects",
     "title": "Let's <gradient>Build</gradient> Together",
     "subtitle": "Choose the ideal channel to start a conversation about your next project.\nEach method is optimized for different types of collaboration.",
@@ -208,4 +264,5 @@
       "avgResponse": "Average response time",
       "responseRate": "Response rate"
     }
-  }}
+  }
+}

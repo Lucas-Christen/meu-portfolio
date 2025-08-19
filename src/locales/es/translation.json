@@ -3,7 +3,7 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "expertise": "Experiencia",
-    "resume": "Curricullum",
+    "resume": "Currículum",
     "projects": "Proyectos",
     "contact": "Contacto"
   },
@@ -11,7 +11,7 @@
     "title": "Lucas Fernandes Christen | Desarrollador Full-Stack & Ingeniero de Datos",
     "description": "Portafolio de Lucas Fernandes Christen, Desarrollador Full-Stack e Ingeniero de Datos especializado en sistemas automotrices de alto rendimiento."
   },
-    "footer": {
+  "footer": {
     "copyright": "Todos los derechos reservados.",
     "subtitle": "Desarrollador Full-Stack | Ingeniero de Datos | Especialista en Sistemas Automotrices",
     "madeWith": "Hecho con",
@@ -37,9 +37,8 @@
     "stat2": "Posiciones Avanzadas en el Ranking",
     "stat3": "Idiomas para Comunicación Global"
   },
-"expertise": {
+  "expertise": {
     "title": "Áreas de <accent>Experiencia</accent>",
-    "titleAccent": "Experiencia",
     "subtitle": "Mi enfoque para construir soluciones innovadoras, combinando desarrollo de software, análisis de datos e ingeniería de sistemas.",
     "techLabel": "Tecnologías principales:",
     "tabs": {
@@ -48,7 +47,7 @@
       "data_title": "Ingeniería y Análisis de Datos",
       "data_desc": "Soy especialista en todo el ciclo de vida de los datos: desde la adquisición en entornos de alta complejidad (telemetría) hasta la creación de pipelines de procesamiento y la aplicación de modelos predictivos con Scikit-learn. Transformo datos brutos en dashboards interactivos que revelan insights estratégicos.",
       "iot_title": "Sistemas Embebidos e IoT",
-      "iot_desc": "Diseño e implemento soluciones de hardware y software para la recopilación de datos en tiempo real. Tengo experiencia práctica con ESP32, Raspberry Pi y comunicación LoRa para garantizar la integridad y transmisión de datos en entornos de alta interferência electromagnética, como el automovilismo.",
+      "iot_desc": "Diseño e implemento soluciones de hardware y software para la recopilación de datos en tiempo real. Tengo experiencia práctica con ESP32, Raspberry Pi y comunicación LoRa para garantizar la integridad y transmisión de datos en entornos de alta interferencia electromagnética, como el automovilismo.",
       "leadership_title": "Liderazgo y Comunicación",
       "leadership_desc": "Lideré un equipo técnico de 42 miembros en el proyecto Fórmula SAE, logrando un salto de 12 posiciones en el ranking nacional. Soy adepto a la resolución de problemas bajo presión y poseo una comunicación eficaz para alinear los objetivos técnicos con la estrategia del proyecto en múltiples idiomas."
     },
@@ -64,89 +63,146 @@
   },
   "resume": {
     "characterName": "Lucas Fernandes Christen",
-    "characterClass": "Ingénieur de Performance | Niveau 4",
-    "race": "Humain (Variante : Résolveur de Problèmes)",
-    "alignment": "Loyal Bon",
+    "characterClass": "Ingeniero de Rendimiento | Nivel 4",
+    "race": "Humano (Variante: Solucionador de Problemas)",
+    "alignment": "Leal y Bueno",
     "attributes": {
-      "title": "Attributs Principaux",
-      "strength": { "name": "FORCE", "description": "Backend, Python, Node.js" },
-      "dexterity": { "name": "DEXTÉRITÉ", "description": "Frontend, React, Animations" },
-      "constitution": { "name": "CONSTITUTION", "description": "DevOps, BD, Scalabilité" },
-      "intelligence": { "name": "INTELLIGENCE", "description": "Algorithmes, Analyse de Données" },
-      "wisdom": { "name": "SAGESSE", "description": "Architecture, Débogage" },
-      "charisma": { "name": "CHARISME", "description": "Leadership, Communication" }
+      "title": "Atributos Principales",
+      "strength": { "name": "FUERZA", "description": "Backend, Python, Node.js" },
+      "dexterity": { "name": "DESTREZA", "description": "Frontend, React, Animaciones" },
+      "constitution": { "name": "CONSTITUCIÓN", "description": "DevOps, BBDD, Escalabilidad" },
+      "intelligence": { "name": "INTELIGENCIA", "description": "Algoritmos, Análisis de Datos" },
+      "wisdom": { "name": "SABIDURÍA", "description": "Arquitectura, Depuración" },
+      "charisma": { "name": "CARISMA", "description": "Liderazgo, Comunicación" }
     },
     "proficiencies": {
-      "title": "Compétences et Maîtrises",
-      "programming": { "title": "Programmation et Données" },
-      "data": { "title": "Machine Learning & Science des Données" },
-      "web": { "title": "Développement Web" },
-      "management": { "title": "Gestion & Compétences Non Techniques" }
+      "title": "Habilidades y Competencias",
+      "programming": { "title": "Programación y Datos" },
+      "data": { "title": "Machine Learning y Ciencia de Datos" },
+      "web": { "title": "Desarrollo Web" },
+      "management": { "title": "Gestión y Habilidades Blandas" }
     },
     "equipment": {
-        "title": "Équipement (Inventaire)",
-        "weapon": { "name": "Arme Principale", "description": "Visual Studio Code" },
-        "shield": { "name": "Bouclier", "description": "Git & GitHub" },
-        "amulet": { "name": "Amulette", "description": "Docker" },
-        "potion": { "name": "Potions", "description": "Café et Documentation Technique" }
+      "title": "Equipamiento (Inventario)",
+      "weapon": { "name": "Arma Principal", "description": "Visual Studio Code" },
+      "shield": { "name": "Escudo", "description": "Git & GitHub" },
+      "amulet": { "name": "Amuleto", "description": "Docker" },
+      "potion": { "name": "Pociones", "description": "Café y Documentación Técnica" }
     },
     "languages": {
-        "title": "Langues",
-        "fluent": "Courant",
-        "intermediate": "Intermédiaire",
-        "beginner": "Débutant"
+      "title": "Idiomas",
+      "fluent": "Fluido",
+      "intermediate": "Intermedio",
+      "beginner": "Principiante"
     },
-    "timelineTitle": "Parcours et Hauts Faits",
+    "timelineTitle": "Trayectoria y Logros",
     "timeline": [
-      { "type": "work", "date": "2025.1", "title": "Développeur Full Stack", "subtitle": "Porsche Cup Brasil", "description": "Développement d'applications spécialisées pour l'optimisation des configurations de voitures, en utilisant les données pour l'analyse des performances." },
-      { "type": "education", "date": "2025 - Présent", "title": "Génie Logiciel", "subtitle": "Unicesumar", "description": "Diplôme axé sur les fondements et les pratiques avancées du génie logiciel." },
-      { "type": "work", "date": "2024.1 - Présent", "title": "Développeur Full Stack", "subtitle": "UTForce E-Racing", "description": "Création de l'interface graphique pour la télémétrie de données en temps réel, en utilisant Python et HTML pour la visualisation et l'analyse via le réseau LoRa." },
-      { "type": "work", "date": "2022.2 - 2025.1", "title": "Président et Chef d'Équipe", "subtitle": "UTForce E-Racing FSAE", "description": "J'ai dirigé 42 membres, faisant passer l'équipe de la 25ème à la 13ème place du classement national. J'ai développé le système de batterie et de télémétrie." },
-      { "type": "education", "date": "2022.2 - 2025", "title": "Génie Électrique (Incomplet)", "subtitle": "UTFPR, Ponta Grossa", "description": "Cours axé sur les systèmes électriques qui a servi de base à la spécialisation dans les systèmes automobiles." }
+      { "type": "work", "date": "2025.1", "title": "Desarrollador Full Stack", "subtitle": "Porsche Cup Brasil", "description": "Desarrollo de aplicaciones especializadas para la optimización de configuraciones de coches, utilizando datos para el análisis de rendimiento." },
+      { "type": "education", "date": "2025 - Actualidad", "title": "Ingeniería de Software", "subtitle": "Unicesumar", "description": "Grado centrado en los fundamentos y prácticas avanzadas de la ingeniería de software." },
+      { "type": "work", "date": "2024.1 - Actualidad", "title": "Desarrollador Full Stack", "subtitle": "UTForce E-Racing", "description": "Creación de la interfaz gráfica para telemetría de datos en tiempo real, utilizando Python y HTML para visualización y análisis a través de la red LoRa." },
+      { "type": "work", "date": "2022.2 - 2025.1", "title": "Presidente y Líder de Equipo", "subtitle": "UTForce E-Racing FSAE", "description": "Lideré a 42 miembros, elevando al equipo del 25º al 13º puesto en el ranking nacional. Desarrollé el sistema de batería y telemetría." },
+      { "type": "education", "date": "2022.2 - 2025", "title": "Ingeniería Eléctrica (Incompleto)", "subtitle": "UTFPR, Ponta Grossa", "description": "Curso centrado en sistemas eléctricos que sirvió de base para la especialización en sistemas automotrices." }
     ],
     "backstory": {
-        "title": "Histoire du Personnage",
-        "content": "Issu des forges de l'ingénierie électrique et formé sur les pistes de course de la Formule SAE, Lucas Christen a découvert que sa véritable vocation était de déchiffrer les secrets cachés dans les données..."
+      "title": "Historia del Personaje",
+      "content": "Forjado en las fraguas de la ingeniería eléctrica y entrenado en las pistas de carreras de la Fórmula SAE, Lucas Christen descubrió que su verdadera vocación era descifrar los secretos ocultos en los datos..."
     }
   },
-"projects": {
+  "projects": {
     "title": "Proyectos <accent>Destacados</accent>",
     "subtitle": "Una selección de trabajos que demuestran mi pasión por resolver problemas complejos con tecnología y datos.",
     "buttonMore": "Ver Más en GitHub",
-    "items": {
-      "telemetry": {
-        "title": "Sistema de Telemetría IoT para Fórmula SAE",
-        "description": "Sistema IoT completo para telemetría en tiempo real, utilizando ESP32 y LoRa en el vehículo y una estación base con Raspberry Pi y una API Flask para procesar y almacenar datos en MySQL. La interfaz gráfica multiplataforma fue desarrollada en Python con PySide6 (Qt) para visualización y análisis de rendimiento.",
-        "tags": ["IoT", "ESP32", "LoRa", "Raspberry Pi", "Python", "Flask", "PySide6"]
-      },
-      "captain": {
-        "title": "Capitán e Ingeniero de Sistemas (UTForce E-Racing)",
-        "description": "Lideré la construcción del prototipo de coche eléctrico, siendo responsable del sistema de alta tensión, diagnóstico y reparación del BMS (Sistema de Gestión de Baterías), y del montaje e integración general. Conseguí un patrocinio estratégico para componentes esenciales, culminando en la entrega de un vehículo totalmente funcional.",
-        "tags": ["Liderazgo de Equipo", "Gestión de Proyectos", "Sistemas Eléctricos", "Alta Tensión", "BMS", "Diagnóstico de Fallos"]
-      },
-      "tires": {
-        "title": "Sistema de Gestión de Neumáticos (Motorsport)",
-        "description": "Aplicación de escritorio (PySide6) para la gestión de neumáticos y análisis de configuración en el automovilismo. El sistema calcula correcciones de presión, exporta informes y visualiza la distribución de rigidez del coche con mapas de calor, ayudando en la toma de decisiones estratégicas.",
-        "tags": ["PySide6", "Python", "Motorsport", "Análisis de Datos", "Desktop App"]
-      },
-      "commandCenter": {
-        "title": "Centro de Comando Personal",
-        "description": "Aplicación de productividad de escritorio multiplataforma (Win/Mac/Linux) con arquitectura modular, construida con Electron.js, Node.js y React. Incluye módulos de finanzas, tareas, metas con gamificación y salud, con gráficos dinámicos y notificaciones nativas.",
-        "tags": ["Electron.js", "Node.js", "React", "Desktop App", "JavaScript"]
-      },
-      "pokemon": {
-        "title": "Sistema de Análisis de Datos de Pokémon",
-        "description": "Aplicación Full Stack (Ionic/Angular) que transforma una Pokédex en una plataforma de análisis de datos. Recopila y procesa métricas de más de 1000 Pokémon, incluyendo estadísticas, metadatos y comportamiento del usuario, utilizando webhooks personalizados, caché LRU y streaming de datos con RxJS para la optimización de la UX en tiempo real.",
-        "tags": ["Ionic", "Angular", "TypeScript", "Análisis de Datos", "RxJS", "Full Stack"]
-      },
-      "webTelemetry": {
-        "title": "Dashboard de Telemetría Web",
-        "description": "Aplicación web para análisis y visualización de datos de telemetría en tiempo real, con un backend en Python/Flask y un frontend interactivo construido con HTML, CSS, JavaScript y Chart.js para gráficos dinámicos.",
-        "tags": ["Flask", "Python", "JavaScript", "Chart.js", "HTML/CSS"]
-      }
+    "telemetry": {
+      "title": "Sistema de Telemetría IoT para Fórmula SAE",
+      "organization": "UTForce E-Racing FSAE",
+      "duration": "2023 - Actualidad",
+      "description": "Sistema IoT completo para telemetría en tiempo real, utilizando ESP32 y LoRa en el vehículo y una estación base con Raspberry Pi y una API Flask para procesar y almacenar datos en MySQL. La interfaz gráfica multiplataforma fue desarrollada en Python con PySide6 (Qt) para visualización y análisis de rendimiento.",
+      "achievements": [
+        "Arquitectura de sensores flexible (soporte para 4-30+ sensores)",
+        "Frecuencia de recolección de datos configurable",
+        "Detección de accidentes en tiempo real mediante anomalías de temperatura",
+        "Actualmente en uso por el equipo"
+      ],
+      "businessImpact": "Permitió la primera participación del equipo en competiciones desde 2018, contribuyendo al 13º puesto."
+    },
+    "captain": {
+      "title": "Capitán e Ingeniero de Sistemas (UTForce E-Racing)",
+      "organization": "UTForce E-Racing FSAE",
+      "duration": "2022.2 - 2025.1",
+      "description": "Lideré la construcción del prototipo de coche eléctrico, siendo responsable del sistema de alta tensión, diagnóstico y reparación del BMS (Sistema de Gestión de Baterías), y del montaje e integración general. Conseguí un patrocinio estratégico para componentes esenciales, culminando en la entrega de un vehículo totalmente funcional.",
+      "achievements": [
+        "Liderazgo de equipo técnico con 42 miembros",
+        "Salto de 12 posiciones en el ranking nacional (25º a 13º)",
+        "Desarrollo completo del sistema de batería y telemetría",
+        "Captación de patrocinio para componentes críticos"
+      ],
+      "businessImpact": "Viabilizó la competitividad del equipo en el escenario nacional y garantizó la entrega de un prototipo funcional bajo restricciones presupuestarias."
+    },
+    "f1Prediction": {
+      "title": "Modelo de ML para Predicción de Resultados de F1",
+      "organization": "Proyecto Personal",
+      "duration": "2024",
+      "description": "Modelo de machine learning para la predicción de resultados de carreras de Fórmula 1, utilizando datos históricos de la API FastF1.",
+      "achievements": [
+        "Análisis de datos históricos e ingeniería de características",
+        "Implementación de modelado predictivo",
+        "Validación del rendimiento contra resultados reales"
+      ],
+      "businessImpact": "Demuestra capacidades de ML en el dominio del análisis de datos de automovilismo."
+    },
+    "autonomousVehicle": {
+      "title": "Prevención de Accidentes en Vehículos Autónomos",
+      "organization": "GSA (Grupo de Sistemas Automotrices)",
+      "duration": "2025 - Actualidad",
+      "description": "Desarrollando un modelo de ML para la predicción de accidentes en vehículos autónomos, usando análisis de patrones de marcha.",
+      "achievements": [
+        "Análisis de patrones de marcha en tiempo real",
+        "Desarrollo de algoritmo de predicción de accidentes",
+        "Colaboración con grupo de investigación automotriz"
+      ],
+      "businessImpact": "Avanzando en la seguridad de los vehículos autónomos a través del análisis predictivo."
+    },
+    "tires": {
+      "title": "Sistema de Gestión de Neumáticos (Motorsport)",
+      "organization": "Proyecto de Motorsport",
+      "duration": "2024",
+      "description": "Aplicación de escritorio (PySide6) para la gestión de neumáticos y análisis de configuración en el automovilismo. El sistema calcula correcciones de presión, exporta informes y visualiza la distribución de rigidez del coche con mapas de calor, ayudando en la toma de decisiones estratégicas.",
+      "achievements": [
+        "Cálculo automatizado de corrección de presión",
+        "Exportación de informes detallados",
+        "Visualización de datos con mapas de calor para análisis de rigidez",
+        "Herramienta de apoyo a la decisión estratégica para ingenieros de pista"
+      ],
+      "businessImpact": "Optimiza el uso de neumáticos y la configuración del vehículo, impactando directamente el rendimiento en la pista."
+    },
+    "commandCenter": {
+      "title": "Centro de Comando Personal",
+      "organization": "Proyecto Personal",
+      "duration": "2023",
+      "description": "Aplicación de productividad de escritorio multiplataforma (Win/Mac/Linux) con arquitectura modular, construida con Electron.js, Node.js y React. Incluye módulos de finanzas, tareas, metas con gamificación y salud, con gráficos dinámicos y notificaciones nativas.",
+      "achievements": [
+        "Arquitectura modular para una fácil expansión",
+        "Interfaz reactiva con gráficos dinámicos",
+        "Soporte multiplataforma (Windows, macOS, Linux)",
+        "Notificaciones nativas del sistema operativo"
+      ],
+      "businessImpact": "Plataforma centralizada para la gestión de la productividad personal y metas."
+    },
+    "pokemon": {
+      "title": "Sistema de Análisis de Datos Pokémon",
+      "organization": "Proyecto Full Stack",
+      "duration": "2023",
+      "description": "Aplicación Full Stack (Ionic/Angular) que transforma una Pokédex en una plataforma de análisis de datos. Recopila y procesa métricas de más de 1000 Pokémon, incluyendo estadísticas, metadatos y comportamiento del usuario, utilizando webhooks personalizados, caché LRU y streaming de datos con RxJS para la optimización de la UX en tiempo real.",
+      "achievements": [
+        "Recopilación y procesamiento de datos de más de 1000 Pokémon",
+        "Implementación de caché LRU para optimización",
+        "Streaming de datos en tiempo real con RxJS",
+        "Uso de webhooks para actualizaciones de datos"
+      ],
+      "businessImpact": "Demuestra la capacidad de construir una aplicación Full Stack compleja con un enfoque en el rendimiento y el análisis de datos."
     }
   },
-"contact": {
+  "contact": {
     "statusBadge": "Disponible para nuevos proyectos",
     "title": "Vamos a <gradient>Construir</gradient> Juntos",
     "subtitle": "Elige el canal ideal para iniciar una conversación sobre tu próximo proyecto.\nCada método está optimizado para diferentes tipos de colaboración.",
@@ -208,4 +264,5 @@
       "avgResponse": "Tiempo medio de respuesta",
       "responseRate": "Tasa de respuesta"
     }
-  }}
+  }
+}

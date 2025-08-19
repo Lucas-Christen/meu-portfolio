@@ -37,6 +37,7 @@ const Navbar: React.FC<{ activeSection: string }> = ({ activeSection }) => {
     { href: '/#skills', label: t('navbar.expertise'), isPageLink: false },
     { href: '/#projects', label: t('navbar.projects'), isPageLink: false },
     { href: '/curriculo', label: t('navbar.resume'), isPageLink: true },
+    { href: '/realistic-curriculo', label: "CV Profissional", isPageLink: true }, // Novo link adicionado
     { href: '/#contact', label: t('navbar.contact'), isPageLink: false },
   ];
 
